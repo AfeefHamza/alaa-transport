@@ -1,0 +1,10 @@
+# Allow all bots to crawl
+User-agent: *
+Allow: /
+
+# Specific rules for all bots
+Disallow: /admin
+Disallow: /.git
+
+# Sitemap location
+Sitemap: https://alaa-transport.com/sitemap.xml
