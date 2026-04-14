@@ -1,7 +1,40 @@
 'use client';
 
-import { useState } from 'react';
-import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { Star } from 'lucide-react';
+import { motion, animate, useInView } from 'framer-motion';
+import { FadeIn, FadeInStagger, FadeInItem } from './ui/fade-in';
+
+const getInitials = (name: string) => {
+  return name
+    .split(' ')
+    .map((n) => n[0])
+    .join('')
+    .toUpperCase()
+    .slice(0, 2);
+};
+
+function Counter({ value, decimals = 0 }: { value: number; decimals?: number }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+
+  useEffect(() => {
+    if (isInView && ref.current) {
+      const controls = animate(0, value, {
+        duration: 2,
+        ease: "easeOut",
+        onUpdate(latest) {
+          if (ref.current) {
+            ref.current.textContent = latest.toFixed(decimals);
+          }
+        },
+      });
+      return () => controls.stop();
+    }
+  }, [isInView, value, decimals]);
+
+  return <span ref={ref}>0</span>;
+}
 
 export function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -58,169 +91,137 @@ export function Testimonials() {
     setActiveIndex((prev) => (prev + 1) % testimonials.length);
   };
 
-  const prevSlide = () => {
-    setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
+  useEffect(() => {
+    const timer = setInterval(() => {
+      nextSlide();
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
-    <section className="py-20 md:py-32 bg-gradient-to-br from-background via-background/80 to-background/60 relative overflow-hidden">
+    <section className="py-12 md:py-16 bg-gradient-to-br from-white via-gray-50 to-white relative overflow-hidden">
       {/* Decorative elements */}
-      <div className="absolute top-20 right-20 w-72 h-72 bg-primary/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 left-20 w-64 h-64 bg-secondary/5 rounded-full blur-3xl"></div>
+      <div className="absolute top-20 right-20 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] pointer-events-none"></div>
+      <div className="absolute bottom-20 left-20 w-[500px] h-[500px] bg-black/5 rounded-full blur-[100px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <div className="text-center mb-16 space-y-4">
-          <div className="inline-block px-4 py-2 bg-primary/10 border border-primary/20 rounded-full">
-            <p className="text-primary text-sm font-semibold">What Our Clients Say</p>
+        <FadeIn className="text-center mb-8 space-y-6">
+          <div className="inline-block px-6 py-2 bg-primary/10 border border-primary/20 rounded-full">
+            <p className="text-primary text-sm font-extrabold uppercase tracking-widest font-sans">What Our Clients Say</p>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-secondary">
-            Trusted by Leading Organizations
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-body-lg text-foreground/70 max-w-2xl mx-auto font-sans">
             From corporations to educational institutions, our clients consistently praise our commitment to excellence
           </p>
-        </div>
+        </FadeIn>
 
-        {/* Testimonials Carousel */}
-        <div className="relative">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
-            {/* Main testimonial - Large */}
-            <div className="lg:col-span-2">
-              <div className="bg-white rounded-3xl p-8 md:p-12 shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 h-full flex flex-col justify-between">
-                {/* Stars */}
-                <div className="flex gap-1 mb-6">
-                  {Array(testimonials[activeIndex].rating)
-                    .fill(0)
-                    .map((_, i) => (
-                      <Star
-                        key={i}
-                        className="w-5 h-5 fill-primary text-primary"
+        <div className="max-w-5xl mx-auto">
+          {/* Testimonials Carousel */}
+          <FadeIn delay={0.2} className="relative">
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 mb-8">
+              
+              {/* Reviewer Thumbnails - ON LEFT */}
+              <div className="flex flex-row lg:flex-col items-center lg:items-start justify-center gap-4 lg:gap-6 lg:w-80">
+                {testimonials.map((testimonial, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setActiveIndex(idx)}
+                    className="relative group transition-all duration-500 flex items-center gap-4 text-left"
+                  >
+                    {/* Ring animation for active avatar */}
+                    {idx === activeIndex && (
+                      <motion.div
+                        layoutId="active-ring"
+                        className="absolute -inset-2 border-2 border-primary rounded-full hidden lg:block"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
                       />
-                    ))}
-                </div>
+                    )}
+                    
+                    <div className={`
+                      w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center text-sm font-black tracking-tighter transition-all duration-500 shrink-0 border-2
+                      ${idx === activeIndex 
+                        ? 'bg-primary text-white border-primary scale-110 z-10 shadow-lg shadow-primary/20' 
+                        : 'bg-white text-gray-400 border-gray-100 opacity-60 hover:opacity-100 hover:scale-105'
+                      }
+                    `}>
+                      {getInitials(testimonial.name)}
+                    </div>
 
-                {/* Quote */}
-                <p className="text-xl md:text-2xl text-gray-800 font-light leading-relaxed mb-8 italic">
-                  "{testimonials[activeIndex].content}"
-                </p>
+                    {/* Reviewer Info beside circle (Desktop only) */}
+                    <div className={`hidden lg:block transition-all duration-500 ${idx === activeIndex ? 'translate-x-1' : 'opacity-60'}`}>
+                      <p className={`font-extrabold text-sm uppercase tracking-wider font-heading leading-tight ${idx === activeIndex ? 'text-secondary' : 'text-gray-500'}`}>
+                        {testimonial.name}
+                      </p>
+                      <p className="text-[10px] font-bold text-primary uppercase tracking-widest mt-0.5">
+                        {testimonial.company}
+                      </p>
+                    </div>
+                  </button>
+                ))}
+              </div>
 
-                {/* Author */}
-                <div className="flex items-center gap-4 pt-6 border-t border-gray-100">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center text-2xl">
-                    {testimonials[activeIndex].image}
-                  </div>
-                  <div>
-                    <p className="font-bold text-secondary text-lg">
-                      {testimonials[activeIndex].name}
+              {/* Main Spotlight Card - ON RIGHT */}
+              <div className="w-full lg:flex-1">
+                <div className="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-2xl shadow-primary/5 border border-gray-100 relative overflow-hidden group min-h-[400px] flex flex-col justify-center">
+                  {/* Decorative background circle */}
+                  <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+                  
+                  {/* Premium Quote treatment */}
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-primary/20 rotate-3">
+                      <span className="text-white text-3xl font-serif leading-none mt-3">&ldquo;</span>
+                    </div>
+
+                    <p className="text-2xl md:text-3xl lg:text-4xl text-secondary font-medium leading-tight mb-10 font-sans italic">
+                      {testimonials[activeIndex].content}
                     </p>
-                    <p className="text-sm text-gray-600">
-                      {testimonials[activeIndex].role},{' '}
-                      <span className="text-primary font-semibold">
-                        {testimonials[activeIndex].company}
-                      </span>
-                    </p>
+
+                    <div className="flex items-center gap-4 pt-8 border-t border-gray-100">
+                      <div className="flex-1">
+                        <p className="font-extrabold text-secondary text-xl font-heading mb-0.5">
+                          {testimonials[activeIndex].name}
+                        </p>
+                        <p className="text-sm text-gray-500 font-sans font-medium">
+                          {testimonials[activeIndex].role} at <span className="text-primary">{testimonials[activeIndex].company}</span>
+                        </p>
+                      </div>
+                      
+                      <div className="flex gap-0.5">
+                        {Array(testimonials[activeIndex].rating).fill(0).map((_, i) => (
+                          <Star key={i} className="w-4 h-4 fill-primary text-primary" />
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-
-            {/* Testimonial thumbnails */}
-            <div className="hidden lg:flex flex-col gap-3">
-              {testimonials.map((testimonial, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setActiveIndex(idx)}
-                  className={`p-4 rounded-xl text-left transition-all duration-300 border-2 ${
-                    idx === activeIndex
-                      ? 'bg-primary/10 border-primary shadow-lg'
-                      : 'bg-white border-transparent hover:border-gray-200'
-                  }`}
-                >
-                  <p className="font-semibold text-secondary text-sm">
-                    {testimonial.name}
-                  </p>
-                  <p className="text-xs text-gray-600 truncate">
-                    {testimonial.company}
-                  </p>
-                  <div className="flex gap-0.5 mt-2">
-                    {Array(testimonial.rating)
-                      .fill(0)
-                      .map((_, i) => (
-                        <Star
-                          key={i}
-                          className="w-3 h-3 fill-primary text-primary"
-                        />
-                      ))}
-                  </div>
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Navigation buttons */}
-          <div className="flex items-center justify-between mt-12">
-            <div className="flex gap-2">
-              <button
-                onClick={prevSlide}
-                className="p-3 rounded-full bg-secondary text-white hover:bg-secondary/90 hover:scale-110 transition-all duration-300 shadow-lg"
-                aria-label="Previous testimonial"
-              >
-                <ChevronLeft className="w-5 h-5" />
-              </button>
-              <button
-                onClick={nextSlide}
-                className="p-3 rounded-full bg-primary text-white hover:bg-primary/90 hover:scale-110 transition-all duration-300 shadow-lg"
-                aria-label="Next testimonial"
-              >
-                <ChevronRight className="w-5 h-5" />
-              </button>
-            </div>
-
-            {/* Slide indicators */}
-            <div className="flex gap-2">
-              {testimonials.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setActiveIndex(idx)}
-                  className={`h-2 rounded-full transition-all duration-300 ${
-                    idx === activeIndex
-                      ? 'bg-primary w-8'
-                      : 'bg-gray-300 w-2 hover:bg-gray-400'
-                  }`}
-                  aria-label={`Go to testimonial ${idx + 1}`}
-                />
-              ))}
-            </div>
-
-            {/* Counter */}
-            <p className="text-secondary font-semibold">
-              {String(activeIndex + 1).padStart(2, '0')} /{' '}
-              {String(testimonials.length).padStart(2, '0')}
-            </p>
-          </div>
+          </FadeIn>
         </div>
 
         {/* Stats under testimonials */}
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-4 gap-6">
+        <FadeInStagger delay={0.4} className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {[
-            { value: '5.0', label: 'Average Rating', suffix: '★' },
-            { value: '500+', label: 'Active Clients', suffix: '' },
-            { value: '98%', label: 'Satisfaction Rate', suffix: '' },
-            { value: '10+', label: 'Years Experience', suffix: '' },
+            { value: 5.0, decimals: 1, label: 'Average Rating', suffix: '★' },
+            { value: 500, label: 'Active Clients', suffix: '+' },
+            { value: 98, label: 'Satisfaction Rate', suffix: '%' },
+            { value: 10, label: 'Years Experience', suffix: '+' },
           ].map((stat, idx) => (
-            <div
-              key={idx}
-              className="text-center p-6 bg-white rounded-2xl border border-gray-100 hover:shadow-lg transition-all duration-300"
-            >
-              <p className="text-4xl md:text-5xl font-bold text-primary mb-2">
-                {stat.value}
-                {stat.suffix}
-              </p>
-              <p className="text-gray-600 font-medium">{stat.label}</p>
-            </div>
+            <FadeInItem key={idx}>
+              <div
+                className="text-center p-8 bg-white rounded-2xl border border-gray-100 hover:shadow-2xl hover:shadow-primary/5 hover:-translate-y-1 transition-all duration-300"
+              >
+                <p className="text-4xl md:text-5xl font-extrabold text-primary mb-3 font-heading">
+                  <Counter value={stat.value} decimals={stat.decimals} />
+                  {stat.suffix}
+                </p>
+                <p className="text-secondary font-bold font-sans uppercase tracking-wider text-sm">{stat.label}</p>
+              </div>
+            </FadeInItem>
           ))}
-        </div>
+        </FadeInStagger>
       </div>
     </section>
   );
