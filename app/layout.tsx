@@ -13,13 +13,24 @@ export const metadata: Metadata = {
     default: 'ALAA Transport | #1 Passenger Transport Service in Fujairah & UAE',
     template: '%s | ALAA Transport',
   },
-  description: 'ALAA Transport provides premium passenger transport services across the UAE. Specializing in staff transportation, airport transfers, luxury fleet rentals, and custom tour packages in Fujairah.',
-  keywords: ['passenger transport Fujairah', 'staff transportation UAE', 'airport transfer service', 'bus rental UAE', 'luxury coach hire', 'ALAA Transport'],
+  description: 'ALAA Transport is your premier partner for passenger and industrial transportation in the UAE. We offer specialized school transport, corporate staff commute, heavy equipment rental, and luxury city tours in Fujairah and across the Emirates.',
+  keywords: [
+    'passenger transport Fujairah', 
+    'staff transportation UAE', 
+    'school bus service Fujairah', 
+    'heavy equipment rental UAE', 
+    'utility material transport',
+    'bus rental Fujairah', 
+    'luxury coach hire UAE', 
+    'airport transfer service', 
+    'construction equipment rental Fujairah',
+    'ALAA Transport'
+  ],
   authors: [{ name: 'ALAA Transport' }],
   creator: 'ALAA Transport',
   openGraph: {
-    title: 'ALAA Transport - Professional Passenger Transport Solutions',
-    description: 'The trusted choice for reliable, safe, and elite transportation services in Fujairah and across the UAE.',
+    title: 'ALAA Transport - Professional Transportation & Heavy Equipment Solutions',
+    description: 'Trusted, safe, and elite transportation services. From school buses to heavy machinery rental, we serve Fujairah and the entire UAE with excellence.',
     url: 'https://alaa-transport.com',
     siteName: 'ALAA Transport',
     images: [
@@ -27,7 +38,7 @@ export const metadata: Metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'ALAA Transport Premium Fleet',
+        alt: 'ALAA Transport Premium Fleet and Equipment',
       },
     ],
     locale: 'en_AE',
@@ -35,8 +46,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ALAA Transport | Premium Journey in UAE',
-    description: 'Safe, reliable, and professional passenger transport services.',
+    title: 'ALAA Transport | Premiere Transport & Equipment Services in UAE',
+    description: 'Leading provider of passenger transport and industrial equipment rental services in the UAE.',
     images: ['/og-image.jpg'],
   },
   alternates: {

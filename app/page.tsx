@@ -33,7 +33,7 @@ export default function Home() {
               '@type': 'LocalBusiness',
               '@id': 'https://alaa-transport.com/#organization',
               name: 'ALAA Transport',
-              description: 'Reliable passenger transport, airport transfers, staff transportation and fleet services in Fujairah, UAE.',
+              description: 'Reliable passenger transport, airport transfers, staff transportation and heavy equipment rental services in Fujairah, UAE.',
               url: 'https://alaa-transport.com',
               telephone: '+971559414300',
               email: 'info@alaa-transport.com',
@@ -55,7 +55,7 @@ export default function Home() {
             {
               '@context': 'https://schema.org',
               '@type': 'TransportationService',
-              name: 'Passenger Transport Services',
+              name: 'Passenger & Industrial Transport Services',
               provider: {
                 '@type': 'LocalBusiness',
                 '@id': 'https://alaa-transport.com/#organization'
@@ -63,27 +63,54 @@ export default function Home() {
               areaServed: 'United Arab Emirates',
               hasOfferCatalog: {
                 '@type': 'OfferCatalog',
-                name: 'Transport Services',
+                name: 'ALAA Transport Services Catalog',
                 itemListElement: [
                   {
                     '@type': 'Offer',
                     itemOffered: {
                       '@type': 'Service',
-                      name: 'Staff Transportation'
+                      name: 'Passenger Transport Services',
+                      description: 'Specialized bus transportation for corporate staff, schools, and labor transport across the UAE.'
                     }
                   },
                   {
                     '@type': 'Offer',
                     itemOffered: {
                       '@type': 'Service',
-                      name: 'Airport Transfers'
+                      name: 'Bus & Van Rental Services',
+                      description: 'Comprehensive rental fleet including fully air-conditioned 12, 18, 30, and 60-seater buses and vans.'
                     }
                   },
                   {
                     '@type': 'Offer',
                     itemOffered: {
                       '@type': 'Service',
-                      name: 'Fleet Management'
+                      name: 'City Tours',
+                      description: 'Expertly guided sightseeing tours across Fujairah and the UAE landmarks.'
+                    }
+                  },
+                  {
+                    '@type': 'Offer',
+                    itemOffered: {
+                      '@type': 'Service',
+                      name: 'School Transport Services',
+                      description: 'Secure and dependable school transportation services with trained drivers.'
+                    }
+                  },
+                  {
+                    '@type': 'Offer',
+                    itemOffered: {
+                      '@type': 'Service',
+                      name: 'Utility & Material Transport',
+                      description: 'Efficient transport services for water supply, construction materials, and debris removal.'
+                    }
+                  },
+                  {
+                    '@type': 'Offer',
+                    itemOffered: {
+                      '@type': 'Service',
+                      name: 'Heavy Equipment Rental',
+                      description: 'Comprehensive heavy machinery rental including excavators, mobile cranes, and dumper trucks.'
                     }
                   }
                 ]
