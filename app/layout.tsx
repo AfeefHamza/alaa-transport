@@ -10,18 +10,18 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase: new URL('https://alaa-transport.com'),
   title: {
-    default: 'ALAA Transport | #1 Passenger Transport Service in Fujairah & UAE',
+    default: 'ALAA Transport | #1 Passenger Transport Service in Fujairah',
     template: '%s | ALAA Transport',
   },
-  description: 'ALAA Transport is your premier partner for passenger and industrial transportation in the UAE. We offer specialized school transport, corporate staff commute, heavy equipment rental, and luxury city tours in Fujairah and across the Emirates.',
+  description: 'ALAA Transport is your premier partner for passenger and industrial transportation in Fujairah. We offer specialized school transport, corporate staff commute, heavy equipment rental, and luxury city tours in Fujairah and across the Emirates.',
   keywords: [
     'passenger transport Fujairah', 
-    'staff transportation UAE', 
+    'staff transportation Fujairah', 
     'school bus service Fujairah', 
-    'heavy equipment rental UAE', 
+    'heavy equipment rental Fujairah', 
     'utility material transport',
     'bus rental Fujairah', 
-    'luxury coach hire UAE', 
+    'luxury coach hire Fujairah', 
     'airport transfer service', 
     'construction equipment rental Fujairah',
     'ALAA Transport'
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   creator: 'ALAA Transport',
   openGraph: {
     title: 'ALAA Transport - Professional Transportation & Heavy Equipment Solutions',
-    description: 'Trusted, safe, and elite transportation services. From school buses to heavy machinery rental, we serve Fujairah and the entire UAE with excellence.',
+    description: 'Trusted, safe, and elite transportation services. From school buses to heavy machinery rental, we serve Fujairah,Sharjah and Abu Dhabi with excellence.',
     url: 'https://alaa-transport.com',
     siteName: 'ALAA Transport',
     images: [

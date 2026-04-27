@@ -55,7 +55,7 @@ export function About() {
             <FadeInItem>
               <a
                 href="#contact"
-                className="btn-primary inline-flex mt-6 group"
+                className="flex items-center justify-center gap-2 px-8 py-3 mt-6 bg-[#B51E2B] text-white rounded-md font-bold font-sans hover:bg-black transition-all duration-300 shadow-xl shadow-[#B51E2B]/20   w-max"
               >
                 Learn More
                 <div className="w-0 group-hover:w-4 transition-all" />

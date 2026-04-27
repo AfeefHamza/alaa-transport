@@ -126,13 +126,13 @@ export function Testimonials() {
                   <button
                     key={idx}
                     onClick={() => setActiveIndex(idx)}
-                    className="relative group transition-all duration-500 flex items-center gap-4 text-left"
+                    className="relative group transition-all duration-500 flex items-center gap-3 text-left py-2 pl-2 pr-6 rounded-full"
                   >
                     {/* Ring animation for active avatar */}
                     {idx === activeIndex && (
                       <motion.div
                         layoutId="active-ring"
-                        className="absolute -inset-2 border-2 border-primary rounded-full hidden lg:block"
+                        className="absolute inset-0 border-2 border-primary rounded-full hidden lg:block"
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ type: "spring", stiffness: 300, damping: 30 }}
@@ -140,9 +140,9 @@ export function Testimonials() {
                     )}
                     
                     <div className={`
-                      w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center text-sm font-black tracking-tighter transition-all duration-500 shrink-0 border-2
+                      w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center text-xs font-black tracking-tighter transition-all duration-500 shrink-0 border-2
                       ${idx === activeIndex 
-                        ? 'bg-primary text-white border-primary scale-110 z-10 shadow-lg shadow-primary/20' 
+                        ? 'bg-primary text-white border-primary scale-105 z-10 shadow-lg shadow-primary/20' 
                         : 'bg-white text-gray-400 border-gray-100 opacity-60 hover:opacity-100 hover:scale-105'
                       }
                     `}>
@@ -151,10 +151,10 @@ export function Testimonials() {
 
                     {/* Reviewer Info beside circle (Desktop only) */}
                     <div className={`hidden lg:block transition-all duration-500 ${idx === activeIndex ? 'translate-x-1' : 'opacity-60'}`}>
-                      <p className={`font-extrabold text-sm uppercase tracking-wider font-heading leading-tight ${idx === activeIndex ? 'text-secondary' : 'text-gray-500'}`}>
+                      <p className={`font-extrabold text-xs uppercase tracking-wider font-heading leading-tight ${idx === activeIndex ? 'text-secondary' : 'text-gray-500'}`}>
                         {testimonial.name}
                       </p>
-                      <p className="text-[10px] font-bold text-primary uppercase tracking-widest mt-0.5">
+                      <p className="text-[9px] font-bold text-primary uppercase tracking-widest mt-0.5">
                         {testimonial.company}
                       </p>
                     </div>
@@ -174,9 +174,11 @@ export function Testimonials() {
                       <span className="text-white text-3xl font-serif leading-none mt-3">&ldquo;</span>
                     </div>
 
-                    <p className="text-2xl md:text-3xl lg:text-4xl text-secondary font-medium leading-tight mb-10 font-sans italic">
-                      {testimonials[activeIndex].content}
-                    </p>
+                    <div className="h-[200px] md:h-[180px] lg:h-[220px] flex items-center mb-10">
+                      <p className="text-2xl md:text-3xl lg:text-4xl text-secondary font-medium leading-tight font-sans italic w-full">
+                        {testimonials[activeIndex].content}
+                      </p>
+                    </div>
 
                     <div className="flex items-center gap-4 pt-8 border-t border-gray-100">
                       <div className="flex-1">

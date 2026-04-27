@@ -7,7 +7,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-gray-50 border-t border-gray-100 text-secondary overflow-hidden pt-8 pb-4 mt-8">
+    <footer className="relative bg-gray-50  border-gray-100 text-secondary overflow-hidden pt-8 pb-4 mt-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <FadeInStagger delay={0.1} className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 text-center md:text-left">
@@ -22,7 +22,7 @@ export function Footer() {
               />
             </div>
             <p className="text-gray-500 font-sans text-[13px] leading-relaxed max-w-xs">
-              ALAA Transport is your trusted partner for reliable passenger transportation across the UAE.
+              ALAA Transport is your trusted partner for reliable passenger transportation across Fujairah,Sharjah and Abu Dhabi.
             </p>
             <div className="flex gap-3 pt-1">
               <a href="#" className="w-8 h-8 rounded-full bg-secondary/5 flex items-center justify-center hover:bg-primary transition-colors hover:text-white group">
@@ -38,11 +38,11 @@ export function Footer() {
           </FadeInItem>
 
           {/* Quick Links */}
-          <FadeInItem className="flex flex-col items-center md:items-start">
-            <h4 className="text-sm font-bold text-secondary tracking-widest uppercase mb-4">Quick Links</h4>
-            <nav aria-label="Footer Navigation">
-              <ul className="space-y-2 font-sans text-[13px] font-medium">
-                {['About', 'Services', 'Fleet', 'Contact'].map((item, idx) => (
+          <FadeInItem className="flex flex-col items-center">
+            <h4 className="text-sm font-bold text-secondary tracking-widest uppercase mb-4 text-center">Quick Links</h4>
+            <nav aria-label="Footer Navigation" className="w-full">
+              <ul className="space-y-2 font-sans text-[13px] font-medium text-center">
+                {['About', 'Services', 'Fleet', 'Careers', 'Contact'].map((item, idx) => (
                   <li key={idx}>
                     <a href={`#${item.toLowerCase()}`} className="text-gray-500 hover:text-primary transition-colors">
                       {item}
@@ -53,13 +53,17 @@ export function Footer() {
             </nav>
           </FadeInItem>
 
-          {/* Services Column - Added to fill width and reduce height by spreading out */}
-          <FadeInItem className="flex flex-col items-center md:items-start">
-            <h4 className="text-sm font-bold text-secondary tracking-widest uppercase mb-4">Our Services</h4>
-            <ul className="space-y-2 font-sans text-[13px] font-medium">
-              <li><span className="text-gray-500 italic">Staff Transport</span></li>
-              <li><span className="text-gray-500 italic">Bus Rental</span></li>
-              <li><span className="text-gray-500 italic">Luxury Travel</span></li>
+          {/* Services Column */}
+          <FadeInItem className="flex flex-col items-center">
+            <h4 className="text-sm font-bold text-secondary tracking-widest uppercase mb-4 text-center">Our Services</h4>
+            <ul className="space-y-2 font-sans text-[13px] font-medium text-center">
+              <li><span className="text-gray-500 italic">Passenger Transport</span></li>
+              <li><span className="text-gray-500 italic">Bus/Van Rental</span></li>
+              <li><span className="text-gray-500 italic">School Transport</span></li>
+              <li><span className="text-gray-500 italic">Utility & Material Transport</span></li>
+              <li><span className="text-gray-500 italic">Heavy Equipment Rental</span></li>
+              <li><span className="text-gray-500 italic">Heavy Duty Garage</span></li>
+
             </ul>
           </FadeInItem>
 
@@ -75,8 +79,8 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-primary" />
-                <a href="mailto:info@alaa-transport.com" className="text-gray-600 hover:text-primary transition-colors">
-                  info@alaa-transport.com
+                <a href="mailto:alaa.passtransport@gmail.com" className="text-gray-600 hover:text-primary transition-colors">
+                  alaa.passtransport@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-2">

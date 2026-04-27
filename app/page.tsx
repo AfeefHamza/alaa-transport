@@ -7,6 +7,7 @@ import { Mission } from '@/components/mission';
 import { Testimonials } from '@/components/testimonials';
 import { Clients } from '@/components/clients';
 import { Contact } from '@/components/contact';
+import { Careers } from '@/components/careers';
 import { Footer } from '@/components/footer';
 
 export default function Home() {
@@ -14,12 +15,12 @@ export default function Home() {
     <main className="min-h-screen">
       <Header />
       <Hero />
-      <About />
-      <Services />
-      {/* <Fleet /> */}
-      <Mission />
-      <Testimonials />
       <Clients />
+      <Services />
+      <Testimonials />
+      <About />
+      <Mission />
+      <Careers />
       <Contact />
       <Footer />
 
@@ -36,7 +37,7 @@ export default function Home() {
               description: 'Reliable passenger transport, airport transfers, staff transportation and heavy equipment rental services in Fujairah, UAE.',
               url: 'https://alaa-transport.com',
               telephone: '+971559414300',
-              email: 'info@alaa-transport.com',
+              email: 'alaa.passtransport@gmail.com',
               address: {
                 '@type': 'PostalAddress',
                 streetAddress: 'Al Hail',

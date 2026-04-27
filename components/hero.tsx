@@ -1,6 +1,6 @@
 'use client';
 
-import { Phone, MessageCircle, ChevronRight, ChevronLeft } from 'lucide-react';
+import { Phone } from 'lucide-react';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { FadeIn, FadeInStagger, FadeInItem } from './ui/fade-in';
@@ -19,65 +19,31 @@ export function Hero() {
       setActiveImageIndex((prev) => (prev + 1) % images.length);
     }, 4000);
     return () => clearInterval(timer);
-  }, []);
+  }, [images.length]);
   
   function setActiveIndex(idx: number): void {
     setActiveImageIndex(idx);
   }
 
   return (
-    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-white">
-      {/* Background images carousel */}
-      <div className="absolute inset-0 w-full h-full lg:w-[65%] lg:left-auto lg:right-0">
-        {images.map((img, idx) => (
-          <div
-            key={idx}
-            className={`absolute inset-0 transition-opacity duration-1000 ${idx === activeImageIndex ? 'opacity-100 scale-105' : 'opacity-0 scale-100'
-              }`}
-          >
-            <Image
-              src={img.src}
-              alt={img.title}
-              fill
-              className="object-cover"
-              priority={idx === 0 || idx === 3}
-              sizes="100vw"
-            />
-          </div>
-        ))}
-        {/* Very subtle gradient to ensure image pops against the geometric overlay */}
-        <div className="absolute inset-0 bg-black/20"></div>
-      </div>
-
-      {/* Geometric Aesthetic Overlay (Inspired by Reference Image 1) */}
-      <div className="hidden lg:block absolute inset-0 z-10 pointer-events-none">
-        {/* White triangle pushing in from the left */}
-        <div className="absolute top-0 left-0 h-full w-[45%] bg-white pb-[100%] origin-top-left skew-x-[20deg]" style={{ clipPath: 'polygon(0 0, 100% 0, 70% 100%, 0% 100%)' }}></div>
-        {/* Red geometric accent */}
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-32 h-64 bg-[#B51E2B] clip-triangle-right opacity-90 hidden xl:block" style={{ clipPath: 'polygon(100% 0, 0 50%, 100% 100%)' }}></div>
-      </div>
-
-      {/* Mobile Dark Gradient Overlay */}
-      <div className="lg:hidden absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/40 z-10"></div>
+    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-gray-50/30 pt-24 pb-12 lg:pt-0 lg:pb-0">
+      {/* Decorative subtle background blobs */}
+      <div className="absolute top-[-10%] right-[-5%] w-[40%] h-[40%] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-[-10%] left-[-5%] w-[30%] h-[30%] bg-secondary/5 rounded-full blur-3xl pointer-events-none"></div>
 
       {/* Content Container */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 w-full z-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           {/* Left Content */}
-          <FadeInStagger delay={0.1} className="space-y-6 lg:pr-12">
-
-            {/* Main Headline */}
+          <FadeInStagger delay={0.1} className="space-y-6 lg:pr-8 order-2 lg:order-1 mt-8 lg:mt-0">
             <FadeInItem className="space-y-2">
-              <div className="text-secondary lg:text-black lg:hidden mb-4 rounded-xl p-4 bg-white/10 backdrop-blur-md border border-white/20 inline-block">
-                <h2 className="text-xl font-bold text-white tracking-widest uppercase">ALAA Transport</h2>
-              </div>
-              <h1 className="text-5xl md:text-6xl font-extrabold text-white lg:text-secondary leading-tight font-heading">
+              <h1 className="text-5xl md:text-6xl font-extrabold text-secondary leading-tight font-heading">
                 Journey In <br />
                 <span className="text-[#B51E2B] tracking-tighter">Excellence</span>
               </h1>
-              <p className="text-lg text-white/90 lg:text-gray-600 font-sans leading-relaxed max-w-md mt-6">
-                We Get You There! Reliable, safe, and professional passenger transport across the United Arab Emirates.
+              <p className="text-lg text-gray-600 font-sans leading-relaxed max-w-md mt-6">
+                We Get You There! Reliable, safe, and professional passenger transport across Fujairah, Sharjah and Abu Dhabi.
               </p>
             </FadeInItem>
 
@@ -86,7 +52,7 @@ export function Hero() {
               <div className="flex flex-col sm:flex-row gap-4 pt-6">
                 <a
                   href="tel:+971559414300"
-                  className="flex items-center justify-center gap-2 px-8 py-4 bg-[#B51E2B] text-white rounded-md font-bold font-sans hover:bg-black transition-all duration-300 shadow-xl shadow-[#B51E2B]/20"
+                  className="flex items-center justify-center gap-2 px-8 py-4 bg-[#B51E2B] text-white rounded-md font-bold font-sans hover:bg-black transition-all duration-300 shadow-xl shadow-[#B51E2B]/20 hover:-translate-y-1"
                 >
                   <Phone className="w-5 h-5" />
                   Call Now
@@ -95,23 +61,46 @@ export function Hero() {
             </FadeInItem>
           </FadeInStagger>
 
-          {/* Empty right column so it doesn't overlap the geometric bus image on desktop */}
-          <div className="hidden lg:block relative h-full">
-            {/* Carousel Navigation matching the professional clean look */}
-            <div className="absolute bottom-0 right-0 flex bg-white p-2 gap-2 rounded-tl-xl shadow-lg">
+          {/* Right Content - Images Carousel inside a sleek floating card */}
+          <FadeIn direction="left" delay={0.2} className="relative h-[400px] sm:h-[500px] lg:h-[600px] w-full rounded-3xl overflow-hidden shadow-2xl hover:shadow-[0_20px_60px_-15px_rgba(181,30,43,0.3)] transition-all duration-700 hover:-translate-y-2 group order-1 lg:order-2 border-4 border-white">
+            {images.map((img, idx) => (
+              <div
+                key={idx}
+                className={`absolute inset-0 transition-opacity duration-1000 ${
+                  idx === activeImageIndex ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
+                }`}
+              >
+                <Image
+                  src={img.src}
+                  alt={img.title}
+                  fill
+                  className="object-cover"
+                  priority={idx === 0}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
+            ))}
+            
+            {/* Dark gradient overlay for dots visibility */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 pointer-events-none"></div>
+
+            {/* Carousel Navigation inside the card */}
+            <div className="absolute bottom-6 right-6 flex gap-2 z-20">
               {images.map((_, idx) => (
                 <button
                   key={idx}
                   onClick={() => setActiveIndex(idx)}
-                  className={`h-2 rounded-full transition-all duration-300 ${idx === activeImageIndex
-                    ? 'bg-[#B51E2B] w-8'
-                    : 'bg-gray-300 w-2 hover:bg-gray-400'
-                    }`}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    idx === activeImageIndex
+                      ? 'bg-[#B51E2B] w-8'
+                      : 'bg-white/60 w-2 hover:bg-white'
+                  }`}
                   aria-label={`View image ${idx + 1}`}
                 />
               ))}
             </div>
-          </div>
+          </FadeIn>
+
         </div>
       </div>
     </section>
