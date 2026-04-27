@@ -208,7 +208,7 @@ export function Contact() {
                   <FadeIn direction="up">
                     <div className="p-4 bg-green-50 border border-green-200 rounded-xl text-green-700 font-sans font-bold flex items-center gap-3 mt-4">
                       <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                      Message tracking successfully! We'll reply within minutes.
+                      Your message has been sent. We’ll contact you soon.
                     </div>
                   </FadeIn>
                 )}

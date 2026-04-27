@@ -68,18 +68,36 @@ export function Header() {
               </a>
             </div>
 
-            {/* Mobile Menu Button */}
-            <button
-              onClick={toggleMobileMenu}
-              className="md:hidden p-3 hover:bg-gray-100 rounded-full transition-colors"
-              aria-label="Toggle menu"
-            >
-              {mobileMenuOpen ? (
-                <X className="w-6 h-6 text-secondary" />
-              ) : (
-                <Menu className="w-6 h-6 text-secondary" />
-              )}
-            </button>
+            {/* Mobile Actions & Menu Button */}
+            <div className="flex md:hidden items-center gap-2">
+              <a
+                href="https://wa.me/971522194186"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 bg-[#25D366]/10 rounded-full hover:bg-[#25D366]/20 transition-colors"
+                aria-label="Contact us on WhatsApp"
+              >
+                <WhatsAppIcon className="w-5 h-5 text-[#25D366]" />
+              </a>
+              <a
+                href="tel:+971559414300"
+                className="p-2 bg-[#B51E2B] text-white rounded-full hover:bg-black transition-colors"
+                aria-label="Call ALAA Transport"
+              >
+                <Phone className="w-4 h-4" />
+              </a>
+              <button
+                onClick={toggleMobileMenu}
+                className="p-2 hover:bg-gray-100 rounded-full transition-colors ml-1"
+                aria-label="Toggle menu"
+              >
+                {mobileMenuOpen ? (
+                  <X className="w-6 h-6 text-secondary" />
+                ) : (
+                  <Menu className="w-6 h-6 text-secondary" />
+                )}
+              </button>
+            </div>
           </div>
 
           {/* Mobile Navigation Dropdown */}
@@ -100,24 +118,6 @@ export function Header() {
                     {link.label}
                   </a>
                 ))}
-                <div className="pt-4 border-t border-gray-100 flex flex-col gap-3">
-                  <a
-                    href="tel:+971522194186"
-                    className="flex justify-center items-center gap-3 px-4 py-3 bg-secondary text-white rounded-xl font-bold"
-                  >
-                    <Phone className="w-5 h-5" />
-                    Call Now
-                  </a>
-                  <a
-                    href="https://wa.me/971559414300"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex justify-center items-center gap-3 px-4 py-3 bg-[#25D366] text-white rounded-xl font-bold"
-                  >
-                    <WhatsAppIcon className="w-5 h-5" />
-                    WhatsApp
-                  </a>
-                </div>
               </nav>
             </motion.div>
           )}
