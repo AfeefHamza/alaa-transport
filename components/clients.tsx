@@ -12,11 +12,7 @@ export function Clients() {
     { name: 'Toshiba', src: '/images/logos/toshiba.png' },
     { name: 'Fujairah Government', src: '/images/logos/government-fujairah.png' },
     { name: 'World Star Holding', src: '/images/logos/world-star.jpeg' },
-    { name: 'Fujairah Fine Arts Academy', src: '/images/logos/fujairah-fine-arts-academy.png' },
-
-
-
-
+    { name: 'Fujairah Fine Arts Academy', src: '/images/logos/fujairah-fine-arts-academy.png' }
   ];
 
 

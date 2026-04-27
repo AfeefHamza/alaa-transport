@@ -121,12 +121,12 @@ export function Testimonials() {
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 mb-8">
               
               {/* Reviewer Thumbnails - ON LEFT */}
-              <div className="flex flex-row lg:flex-col items-center lg:items-start justify-center gap-4 lg:gap-6 lg:w-80">
+              <div className="flex flex-row lg:flex-col items-center lg:items-start justify-center gap-3 lg:gap-6 lg:w-80 flex-wrap">
                 {testimonials.map((testimonial, idx) => (
                   <button
                     key={idx}
                     onClick={() => setActiveIndex(idx)}
-                    className="relative group transition-all duration-500 flex items-center gap-3 text-left py-2 pl-2 pr-6 rounded-full"
+                    className="relative group transition-all duration-500 flex items-center lg:gap-3 text-left lg:py-2 lg:pl-2 lg:pr-6 rounded-full"
                   >
                     {/* Ring animation for active avatar */}
                     {idx === activeIndex && (
@@ -174,8 +174,8 @@ export function Testimonials() {
                       <span className="text-white text-3xl font-serif leading-none mt-3">&ldquo;</span>
                     </div>
 
-                    <div className="h-[200px] md:h-[180px] lg:h-[220px] flex items-center mb-10">
-                      <p className="text-2xl md:text-3xl lg:text-4xl text-secondary font-medium leading-tight font-sans italic w-full">
+                    <div className="min-h-[150px] md:min-h-[180px] lg:min-h-[220px] flex items-center mb-8 md:mb-10 py-2">
+                      <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-secondary font-medium leading-relaxed md:leading-tight font-sans italic w-full">
                         {testimonials[activeIndex].content}
                       </p>
                     </div>

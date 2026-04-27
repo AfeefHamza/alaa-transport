@@ -68,24 +68,24 @@ export function Footer() {
           </FadeInItem>
 
           {/* Contact Details */}
-          <FadeInItem className="flex flex-col items-center md:items-start">
-            <h4 className="text-sm font-bold text-secondary tracking-widest uppercase mb-4">Contact Info</h4>
-            <ul className="space-y-3 font-sans text-[13px]">
-              <li className="flex items-center gap-2">
+          <FadeInItem className="flex flex-col items-center">
+            <h4 className="text-sm font-bold text-secondary tracking-widest uppercase mb-4 text-center">Contact Info</h4>
+            <ul className="space-y-3 font-sans text-[13px] text-center w-full">
+              <li className="flex items-center justify-center gap-2">
                 <Phone className="w-4 h-4 text-primary" />
                 <a href="tel:+971559414300" className="text-secondary font-bold hover:text-primary transition-colors">
                   +971 55 941 4300
                 </a>
               </li>
-              <li className="flex items-center gap-2">
+              <li className="flex items-center justify-center gap-2">
                 <Mail className="w-4 h-4 text-primary" />
                 <a href="mailto:alaa.passtransport@gmail.com" className="text-gray-600 hover:text-primary transition-colors">
                   alaa.passtransport@gmail.com
                 </a>
               </li>
-              <li className="flex items-start gap-2">
+              <li className="flex items-start justify-center gap-2">
                 <MapPin className="w-4 h-4 text-primary shrink-0" />
-                <span className="text-gray-600 text-[13px] leading-tight max-w-[180px]">
+                <span className="text-gray-600 text-[13px] leading-tight max-w-[180px] text-center">
                   Fujairah, UAE
                 </span>
               </li>

@@ -58,10 +58,10 @@ export function Contact() {
                   <div className="space-y-6">
                   {/* Sleek Contact Item */}
                   <div className="flex items-start gap-4 group">
-                    <div className="w-10 h-10 bg-gray-50 group-hover:bg-primary/10 rounded-xl flex items-center justify-center transition-colors">
+                    <div className="w-10 h-10 bg-gray-50 group-hover:bg-primary/10 rounded-xl flex items-center justify-center transition-colors shrink-0">
                       <Phone className="w-5 h-5 text-primary" />
                     </div>
-                    <div>
+                    <div className="overflow-hidden">
                       <p className="text-sm text-gray-500 font-sans mb-1">Call Us Anytime</p>
                       <a href="tel:+971522194186" className="text-lg font-bold text-secondary hover:text-primary transition-colors block">
                         +971 52 219 4186
@@ -70,22 +70,22 @@ export function Contact() {
                   </div>
 
                   <div className="flex items-start gap-4 group">
-                    <div className="w-10 h-10 bg-gray-50 group-hover:bg-primary/10 rounded-xl flex items-center justify-center transition-colors">
+                    <div className="w-10 h-10 bg-gray-50 group-hover:bg-primary/10 rounded-xl flex items-center justify-center transition-colors shrink-0">
                       <Mail className="w-5 h-5 text-primary" />
                     </div>
-                    <div>
+                    <div className="overflow-hidden">
                       <p className="text-sm text-gray-500 font-sans mb-1">Send an Email</p>
-                      <a href="mailto:alaa.passtransport@gmail.com" className="text-lg font-bold text-secondary hover:text-primary transition-colors block">
+                      <a href="mailto:alaa.passtransport@gmail.com" className="text-[15px] sm:text-lg font-bold text-secondary hover:text-primary transition-colors block break-all sm:break-normal">
                         alaa.passtransport@gmail.com
                       </a>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4 group">
-                    <div className="w-10 h-10 bg-gray-50 group-hover:bg-primary/10 rounded-xl flex items-center justify-center transition-colors">
+                    <div className="w-10 h-10 bg-gray-50 group-hover:bg-primary/10 rounded-xl flex items-center justify-center transition-colors shrink-0">
                       <MapPin className="w-5 h-5 text-primary" />
                     </div>
-                    <div>
+                    <div className="overflow-hidden">
                       <p className="text-sm text-gray-500 font-sans mb-1">Our Location</p>
                       <p className="text-lg font-bold text-secondary">
                         Fujairah, UAE
