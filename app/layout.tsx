@@ -24,7 +24,6 @@ export const metadata: Metadata = {
     'luxury coach hire Fujairah', 
     'airport transfer service', 
     'construction equipment rental Fujairah',
-    'ALAA Transport'
   ],
   authors: [{ name: 'ALAA Transport' }],
   creator: 'ALAA Transport',

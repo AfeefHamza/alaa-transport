@@ -59,7 +59,7 @@ export function Header() {
                 <WhatsAppIcon className="w-5 h-5 text-[#25D366] group-hover:scale-110 transition-transform" />
               </a>
               <a
-                href="tel:+971559414300"
+                href="tel:+971522194186"
                 className="px-6 py-3 bg-secondary text-white rounded-full font-bold font-sans text-sm hover:bg-black transition-all hover:shadow-lg flex items-center gap-2 group"
                 aria-label="Call ALAA Transport"
               >
@@ -80,7 +80,7 @@ export function Header() {
                 <WhatsAppIcon className="w-5 h-5 text-[#25D366]" />
               </a>
               <a
-                href="tel:+971559414300"
+                href="tel:+971522194186"
                 className="p-2 bg-[#B51E2B] text-white rounded-full hover:bg-black transition-colors"
                 aria-label="Call ALAA Transport"
               >

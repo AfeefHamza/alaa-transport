@@ -1,6 +1,6 @@
 'use client';
 
-import { Phone, Mail, MapPin, Facebook, Linkedin, Twitter } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, Linkedin, Instagram } from 'lucide-react';
 import { FadeIn, FadeInStagger, FadeInItem } from './ui/fade-in';
 
 export function Footer() {
@@ -25,14 +25,14 @@ export function Footer() {
               ALAA Transport is your trusted partner for reliable passenger transportation across Fujairah,Sharjah and Abu Dhabi.
             </p>
             <div className="flex gap-3 pt-1">
-              <a href="#" className="w-8 h-8 rounded-full bg-secondary/5 flex items-center justify-center hover:bg-primary transition-colors hover:text-white group">
+              <a href="https://www.facebook.com/share/1BcRxWHo5i/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-secondary/5 flex items-center justify-center hover:bg-primary transition-colors hover:text-white group">
                 <Facebook className="w-3.5 h-3.5 text-secondary group-hover:text-white" />
               </a>
-              <a href="#" className="w-8 h-8 rounded-full bg-secondary/5 flex items-center justify-center hover:bg-primary transition-colors hover:text-white group">
-                <Linkedin className="w-3.5 h-3.5 text-secondary group-hover:text-white" />
+              <a href="https://www.instagram.com/alaatransport.ae?igsh=MXZtcnptaDVjN2tiOQ==" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-secondary/5 flex items-center justify-center hover:bg-primary transition-colors hover:text-white group">
+                <Instagram className="w-3.5 h-3.5 text-secondary group-hover:text-white" />
               </a>
-              <a href="#" className="w-8 h-8 rounded-full bg-secondary/5 flex items-center justify-center hover:bg-primary transition-colors hover:text-white group">
-                <Twitter className="w-3.5 h-3.5 text-secondary group-hover:text-white" />
+              <a href="https://www.linkedin.com/company/alaagroup/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-secondary/5 flex items-center justify-center hover:bg-primary transition-colors hover:text-white group">
+                <Linkedin className="w-3.5 h-3.5 text-secondary group-hover:text-white" />
               </a>
             </div>
           </FadeInItem>
@@ -42,7 +42,7 @@ export function Footer() {
             <h4 className="text-sm font-bold text-secondary tracking-widest uppercase mb-4 text-center">Quick Links</h4>
             <nav aria-label="Footer Navigation" className="w-full">
               <ul className="space-y-2 font-sans text-[13px] font-medium text-center">
-                {['About', 'Services', 'Fleet', 'Careers', 'Contact'].map((item, idx) => (
+                {['About', 'Services', 'Careers', 'Contact'].map((item, idx) => (
                   <li key={idx}>
                     <a href={`#${item.toLowerCase()}`} className="text-gray-500 hover:text-primary transition-colors">
                       {item}
@@ -73,8 +73,8 @@ export function Footer() {
             <ul className="space-y-3 font-sans text-[13px] text-center w-full">
               <li className="flex items-center justify-center gap-2">
                 <Phone className="w-4 h-4 text-primary" />
-                <a href="tel:+971559414300" className="text-secondary font-bold hover:text-primary transition-colors">
-                  +971 55 941 4300
+                <a href="tel:+971522194186" className="text-secondary  hover:text-primary transition-colors">
+                  +971 52 219 4186
                 </a>
               </li>
               <li className="flex items-center justify-center gap-2">

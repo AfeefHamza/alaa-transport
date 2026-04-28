@@ -51,7 +51,7 @@ export function Hero() {
             <FadeInItem>
               <div className="flex flex-col sm:flex-row gap-4 pt-6">
                 <a
-                  href="tel:+971559414300"
+                  href="tel:+971522194186"
                   className="flex items-center justify-center gap-2 px-8 py-4 bg-[#B51E2B] text-white rounded-md font-bold font-sans hover:bg-black transition-all duration-300 shadow-xl shadow-[#B51E2B]/20 hover:-translate-y-1"
                 >
                   <Phone className="w-5 h-5" />

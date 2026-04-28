@@ -72,7 +72,7 @@ export function Services() {
             alt={service.title}
             fill
             className="object-cover"
-            priority={idx === 0}
+            priority
             sizes="100vw"
           />
           {/* Light overlay just to gently dim the image without hiding it */}
@@ -129,7 +129,7 @@ export function Services() {
                 <button
                   key={idx}
                   onClick={() => setActiveIndex(idx)}
-                  className={`flex flex-col sm:flex-row items-start sm:items-center gap-3 md:gap-4 px-4 py-4 md:py-5 rounded-2xl font-bold transition-all duration-500 text-left w-full
+                  className={`flex flex-col sm:flex-row items-start sm:items-center gap-3 md:gap-4 px-4 py-4 md:py-5 rounded-2xl font-bold transition-all duration-500 text-left w-full cursor-pointer
                     ${isActive 
                       ? 'bg-white text-black shadow-2xl scale-[1.02]' 
                       : 'bg-white/5 hover:bg-white/10 text-white/80 border border-white/5 hover:border-white/20'
