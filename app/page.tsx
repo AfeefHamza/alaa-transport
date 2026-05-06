@@ -32,14 +32,14 @@ export default function Home() {
       {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
-        "@id": "https://alaa-transport.com/#organization",
+        "@id": "https://alaatransport.com/#organization",
         name: "ALAA Transport",
         description:
           "Reliable passenger transport, airport transfers, staff transportation and heavy equipment rental services in Fujairah, UAE.",
-        url: "https://alaa-transport.com",
+        url: "https://alaatransport.com",
         telephone: "+971522194186",
         email: "alaa.passtransport@gmail.com",
-        image: "https://alaa-transport.com/og-image.jpg",
+        image: "https://alaatransport.com/og-image.jpg",
         priceRange: "$$",
 
         address: {
@@ -81,7 +81,7 @@ export default function Home() {
         name: "Passenger & Industrial Transport Services",
         provider: {
           "@type": "LocalBusiness",
-          "@id": "https://alaa-transport.com/#organization",
+          "@id": "https://alaatransport.com/#organization",
         },
         areaServed: "United Arab Emirates",
 

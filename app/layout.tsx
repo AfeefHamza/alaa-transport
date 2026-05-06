@@ -8,9 +8,9 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://alaa-transport.com'),
+  metadataBase: new URL('https://alaatransport.com'),
   title: {
-    default: 'ALAA Transport | #1 Passenger Transport Service in Fujairah',
+    default: 'ALAA Transport | Reliable Passenger Transport Service in Fujairah',
     template: '%s | ALAA Transport',
   },
   description: 'ALAA Transport is your premier partner for passenger and industrial transportation in Fujairah. We offer specialized school transport, corporate staff commute, heavy equipment rental, and luxury city tours in Fujairah and across the Emirates.',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'ALAA Transport - Professional Transportation & Heavy Equipment Solutions',
     description: 'Trusted, safe, and elite transportation services. From school buses to heavy machinery rental, we serve Fujairah,Sharjah and Abu Dhabi with excellence.',
-    url: 'https://alaa-transport.com',
+    url: 'https://alaatransport.com',
     siteName: 'ALAA Transport',
     images: [
       {
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     images: ['/og-image.jpg'],
   },
   alternates: {
-    canonical: 'https://alaa-transport.com',
+    canonical: 'https://alaatransport.com',
   },
   icons: {
     icon: [
@@ -65,8 +65,6 @@ export const metadata: Metadata = {
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
 }
 
 export default function RootLayout({
