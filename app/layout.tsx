@@ -52,6 +52,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://alaatransport.com',
   },
+  verification: {
+    google: '7ftdBUtqSAFn4CzSN17z3WIAAq2EC9pW1se021SB5OM',
+  },
   icons: {
     icon: [
       {
