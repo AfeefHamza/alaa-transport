@@ -75,8 +75,8 @@ export function Contact() {
                     </div>
                     <div className="overflow-hidden">
                       <p className="text-sm text-gray-500 font-sans mb-1">Send an Email</p>
-                      <a href="mailto:alaa.passtransport@gmail.com" className="text-[15px] sm:text-lg font-bold text-secondary hover:text-primary transition-colors block break-all sm:break-normal">
-                        alaa.passtransport@gmail.com
+                      <a href="mailto:Admin@alaatransport.com" className="text-[15px] sm:text-lg font-bold text-secondary hover:text-primary transition-colors block break-all sm:break-normal">
+                        Admin@alaatransport.com
                       </a>
                     </div>
                   </div>

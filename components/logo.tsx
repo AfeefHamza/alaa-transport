@@ -14,10 +14,10 @@ export function Logo() {
           priority
         />
       </div>
-      <span className="hidden sm:flex items-center font-serif italic font-black text-3xl tracking-widest text-foreground transition-colors duration-300">
-        <span>A</span>
-        <span className="text-[#B51E2B] scale-110 mx-0.5">L</span>
-        <span>AA</span>
+      <span className="hidden sm:flex items-center font-arizonia text-5xl md:text-6xl text-foreground transition-colors duration-300 select-none scale-x-110 origin-left">
+        <span className='mx-1'>A</span>
+        <span className="text-[#B51E2B] -ml-1 md:-ml-1.5">l</span>
+        <span className="-ml-0.5 md:-ml-0.75">aa</span>
       </span>
     </Link>
   );

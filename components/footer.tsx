@@ -4,7 +4,6 @@ import { Phone, Mail, MapPin, Facebook, Linkedin, Instagram } from 'lucide-react
 import { FadeIn, FadeInStagger, FadeInItem } from './ui/fade-in';
 
 export function Footer() {
-  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="relative bg-gray-50  border-gray-100 text-secondary overflow-hidden pt-8 pb-4 mt-8">
@@ -79,8 +78,8 @@ export function Footer() {
               </li>
               <li className="flex items-center justify-center gap-2">
                 <Mail className="w-4 h-4 text-primary" />
-                <a href="mailto:alaa.passtransport@gmail.com" className="text-gray-600 hover:text-primary transition-colors">
-                  alaa.passtransport@gmail.com
+                <a href="mailto:Admin@alaatransport.com" className="text-gray-600 hover:text-primary transition-colors">
+                  Admin@alaatransport.com
                 </a>
               </li>
               <li className="flex items-start justify-center gap-2">
@@ -96,7 +95,7 @@ export function Footer() {
         {/* Bottom Bar - Extremely Tight */}
         <FadeIn delay={0.4} className="flex flex-col md:flex-row justify-between items-center gap-2 pt-4 border-t border-gray-200">
           <p className="text-[11px] font-sans text-gray-400">
-            &copy; {currentYear} ALAA Transport. All reserved.
+            &copy; ALAA Transport. All reserved.
           </p>
           <p className="text-[11px] font-sans text-gray-400 tracking-wider uppercase">
             Designed for Excellence

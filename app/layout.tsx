@@ -1,11 +1,16 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Geist, Geist_Mono, Arizonia } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { ScrollReset } from '@/components/ui/scroll-reset'
 import './globals.css'
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
+const arizonia = Arizonia({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-arizonia',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://alaatransport.com'),
@@ -76,7 +81,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={arizonia.variable} suppressHydrationWarning>
       <body className="font-sans antialiased">
         <ScrollReset />
         {children}

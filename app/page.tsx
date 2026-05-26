@@ -38,7 +38,7 @@ export default function Home() {
           "Reliable passenger transport, airport transfers, staff transportation and heavy equipment rental services in Fujairah, UAE.",
         url: "https://alaatransport.com",
         telephone: "+971522194186",
-        email: "alaa.passtransport@gmail.com",
+        email: "Admin@alaatransport.com",
         image: "https://alaatransport.com/og-image.jpg",
         priceRange: "$$",
 

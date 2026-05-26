@@ -26,7 +26,7 @@ export function Hero() {
   }
 
   return (
-    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-gray-50/30 pt-24 pb-12 lg:pt-0 lg:pb-0">
+    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-gray-50/30 pt-28 pb-12 lg:pt-32 lg:pb-16">
       {/* Decorative subtle background blobs */}
       <div className="absolute top-[-10%] right-[-5%] w-[40%] h-[40%] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
       <div className="absolute bottom-[-10%] left-[-5%] w-[30%] h-[30%] bg-secondary/5 rounded-full blur-3xl pointer-events-none"></div>
@@ -38,12 +38,12 @@ export function Hero() {
           {/* Left Content */}
           <FadeInStagger delay={0.1} className="space-y-6 lg:pr-8 order-2 lg:order-1 mt-8 lg:mt-0">
             <FadeInItem className="space-y-2">
-              <h1 className="text-5xl md:text-6xl font-extrabold text-secondary leading-tight font-heading">
-                Journey In <br />
-                <span className="text-[#B51E2B] tracking-tighter">Excellence</span>
+              <h1 className="text-4xl md:text-5xl font-bold text-secondary leading-tight tracking-tight font-heading">
+                Your Workforce, <br />
+                <span className="text-[#B51E2B] tracking-tight">Our Responsibility</span>
               </h1>
-              <p className="text-lg text-gray-600 font-sans leading-relaxed max-w-md mt-6">
-                We Get You There! Reliable, safe, and professional passenger transport across Fujairah, Sharjah and Abu Dhabi.
+              <p className="text-base md:text-lg text-gray-600 font-sans leading-relaxed max-w-md mt-6">
+                15 Years of Trusted Transport Excellence. <br />Reliable, safe, and professional passenger transport across Fujairah, Sharjah and Abu Dhabi.
               </p>
             </FadeInItem>
 
