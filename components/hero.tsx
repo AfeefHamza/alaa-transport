@@ -8,10 +8,10 @@ import { FadeIn, FadeInStagger, FadeInItem } from './ui/fade-in';
 export function Hero() {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const images = [
-    { src: '/images/hero-dramatic-bus.jpg', title: 'Premium Travel Experience' },
-    { src: '/images/happy-passengers.jpg', title: 'Luxury & Comfort' },
-    { src: '/images/bus-interior-luxury.jpg', title: 'Modern Fleet' },
-    { src: '/images/fleet-lineup-dramatic.jpg', title: 'Fleet Lineup' },
+    { src: '/images/alaa-cover-1.webp', title: 'Premium Travel Experience' },
+    { src: '/images/alaa-cover-2.webp', title: 'Luxury & Comfort' },
+    { src: '/images/alaa-cover-3.webp', title: 'Modern Fleet' },
+    { src: '/images/alaa-cover-4.webp', title: 'Fleet Lineup' },
   ];
 
   useEffect(() => {
@@ -26,81 +26,96 @@ export function Hero() {
   }
 
   return (
-    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-gray-50/30 pt-28 pb-12 lg:pt-32 lg:pb-16">
-      {/* Decorative subtle background blobs */}
-      <div className="absolute top-[-10%] right-[-5%] w-[40%] h-[40%] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
-      <div className="absolute bottom-[-10%] left-[-5%] w-[30%] h-[30%] bg-secondary/5 rounded-full blur-3xl pointer-events-none"></div>
+    <section className="relative w-screen h-screen overflow-hidden text-white antialiased">
 
-      {/* Content Container */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      {/* Cinematic background carousel - full viewport */}
+      <div className="absolute inset-0 -z-20">
+        {images.map((img, idx) => (
+          <div
+            key={idx}
+            className={`absolute inset-0 transition-all duration-1200 will-change-transform transform-gpu ${
+              idx === activeImageIndex ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
+            }`}
+          >
+            <Image
+              src={img.src}
+              alt={img.title}
+              fill
+              className="object-cover object-center filter contrast-105 brightness-95"
+              priority={idx === 0}
+              sizes="100vw"
+            />
+          </div>
+        ))}
 
-          {/* Left Content */}
-          <FadeInStagger delay={0.1} className="space-y-6 lg:pr-8 order-2 lg:order-1 mt-8 lg:mt-0">
-            <FadeInItem className="space-y-2">
-              <h1 className="text-4xl md:text-5xl font-bold text-secondary leading-tight tracking-tight font-heading">
-                Your Workforce, <br />
-                <span className="text-[#B51E2B] tracking-tight">Our Responsibility</span>
-              </h1>
-              <p className="text-base md:text-lg text-gray-600 font-sans leading-relaxed max-w-md mt-6">
-                15 Years of Trusted Transport Excellence. <br />Reliable, safe, and professional passenger transport across Fujairah, Sharjah and Abu Dhabi.
-              </p>
-            </FadeInItem>
+        {/* Cinematic vignettes + color grade */}
+        <div className="absolute inset-0 pointer-events-none" aria-hidden>
+          <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent mix-blend-normal" />
+          <div className="absolute -left-1/4 -top-1/4 w-[60vw] h-[60vh] bg-linear-to-br from-[#3b3b3b]/10 via-transparent to-[#bfa55a]/6 blur-3xl opacity-40 transform rotate-6" />
+          <div className="absolute right-0 bottom-0 w-2/3 h-1/2 bg-linear-to-t  to-transparent opacity-80" />
+        </div>
+      </div>
 
-            {/* CTA Buttons */}
-            <FadeInItem>
-              <div className="flex flex-col sm:flex-row gap-4 pt-6">
-                <a
-                  href="tel:+971522194186"
-                  className="flex items-center justify-center gap-2 px-8 py-4 bg-[#B51E2B] text-white rounded-md font-bold font-sans hover:bg-black transition-all duration-300 shadow-xl shadow-[#B51E2B]/20 hover:-translate-y-1"
-                >
-                  <Phone className="w-5 h-5" />
-                  Call Now
-                </a>
-              </div>
-            </FadeInItem>
-          </FadeInStagger>
+      {/* Main content container - center-aligned */}
+      <div className="relative z-20 flex items-center justify-center h-full">
+        <div className="max-w-6xl w-full px-6 sm:px-8 lg:px-12">
+          <div className="flex flex-col items-center text-center gap-6 h-full py-24">
 
-          {/* Right Content - Images Carousel inside a sleek floating card */}
-          <FadeIn direction="left" delay={0.2} className="relative h-[400px] sm:h-[500px] lg:h-[600px] w-full rounded-3xl overflow-hidden shadow-2xl hover:shadow-[0_20px_60px_-15px_rgba(181,30,43,0.3)] transition-all duration-700 hover:-translate-y-2 group order-1 lg:order-2 border-4 border-white">
-            {images.map((img, idx) => (
-              <div
-                key={idx}
-                className={`absolute inset-0 transition-opacity duration-1000 ${
-                  idx === activeImageIndex ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
-                }`}
-              >
-                <Image
-                  src={img.src}
-                  alt={img.title}
-                  fill
-                  className="object-cover"
-                  priority={idx === 0}
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
-            ))}
-            
-            {/* Dark gradient overlay for dots visibility */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 pointer-events-none"></div>
+            <FadeInStagger delay={0.06} className="w-full">
+              <FadeInItem className="space-y-4">
+                {/* Small label */}
+                <div className="text-sm tracking-widest text-white/80" style={{letterSpacing: '0.2em'}}>
+                  RELIABLE • SAFE • PROFESSIONAL
+                </div>
 
-            {/* Carousel Navigation inside the card */}
-            <div className="absolute bottom-6 right-6 flex gap-2 z-20">
-              {images.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setActiveIndex(idx)}
-                  className={`h-2 rounded-full transition-all duration-300 ${
-                    idx === activeImageIndex
-                      ? 'bg-[#B51E2B] w-8'
-                      : 'bg-white/60 w-2 hover:bg-white'
-                  }`}
-                  aria-label={`View image ${idx + 1}`}
-                />
-              ))}
-            </div>
-          </FadeIn>
+                {/* Headline */}
+                <h1 className="font-serif font-medium text-white drop-shadow-[0_8px_30px_rgba(0,0,0,0.7)]" style={{
+                  fontFamily: 'Playfair Display, Cormorant Garamond, Bodoni Moda, Georgia, serif',
+                  fontWeight: 500,
+                  fontSize: 'clamp(3rem, 7vw, 5.5rem)',
+                  letterSpacing: '-0.03em',
+                  lineHeight: 0.95
+                }}>
+                  Your Workforce.
+                  <br />
+                  Our Responsibility.
+                </h1>
 
+                {/* Subheading */}
+                <p className="mx-auto text-[1.125rem] text-white/90 max-w-[650px]" style={{fontFamily: 'Inter, Manrope, system-ui, Arial, sans-serif', fontWeight: 400}}>
+                  15 Years of Trusted Transport Excellence.
+                  Reliable, safe, and professional passenger transport across Fujairah, Sharjah and Abu Dhabi.
+                </p>
+              </FadeInItem>
+
+              {/* Floating stats card */}
+              <FadeInItem>
+                <div className="mt-8">
+                  <div className="mx-auto w-fit bg-black/30 border border-white/8 backdrop-blur-md rounded-xl px-6 py-4 flex items-center gap-8 shadow-md">
+                    <div className="text-center text-white">
+                      <div className="text-xl font-bold">15+</div>
+                      <div className="text-sm text-white/80">Years Experience</div>
+                    </div>
+
+                    <div className="h-8 w-px bg-white/8" />
+
+                    <div className="text-center text-white">
+                      <div className="text-xl font-bold">250K+</div>
+                      <div className="text-sm text-white/80">Trips Completed</div>
+                    </div>
+
+                    <div className="h-8 w-px bg-white/8" />
+
+                    <div className="text-center text-white">
+                      <div className="text-xl font-bold">4.9</div>
+                      <div className="text-sm text-white/80">Customer Rating</div>
+                    </div>
+                  </div>
+                </div>
+              </FadeInItem>
+            </FadeInStagger>
+
+          </div>
         </div>
       </div>
     </section>

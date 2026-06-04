@@ -6,12 +6,11 @@ import { motion, animate, useInView } from 'framer-motion';
 import { FadeIn, FadeInStagger, FadeInItem } from './ui/fade-in';
 
 const getInitials = (name: string) => {
-  return name
-    .split(' ')
-    .map((n) => n[0])
-    .join('')
-    .toUpperCase()
-    .slice(0, 2);
+  const parts = name.split(' ').filter(Boolean);
+  if (parts.length === 1) {
+    return name.slice(0, 2).toUpperCase();
+  }
+  return (parts[0][0] + parts[1][0]).toUpperCase();
 };
 
 function Counter({ value, decimals = 0 }: { value: number; decimals?: number }) {
@@ -41,49 +40,44 @@ export function Testimonials() {
 
   const testimonials = [
     {
-      name: 'Ahmed Al Mansouri',
-      company: 'UAE Logistics Ltd',
-      role: 'Operations Director',
+      company: 'Lulu Mall Fujairah',
+      shortCompany: 'Lulu Mall',
+      role: 'Facility Manager',
+      services: 'Bus Rental & Garage Services',
+      logo: '/images/logos/lulu-hypermarket.jpg',
       content:
-        'ALAA Transport has been instrumental in our daily operations. Their reliability and professional service set them apart from competitors.',
+        "Alaa Transport has been our trusted partner in Fujairah for staff transportation and garage services. Their fleet is well-maintained, drivers are professional and courteous, and the team handles last-minute scheduling changes efficiently. Their reliability, responsiveness, and commitment to service quality make them a dependable transport partner for any retail or commercial organization in the UAE.",
       rating: 5,
-      image: '👔',
     },
     {
-      name: 'Fatima Al Kaabi',
-      company: 'Education Plus Academy',
-      role: 'Principal',
+      company: 'Etihad Railway',
+      shortCompany: 'Etihad Railway',
+      role: 'Project Manager',
+      services: 'Bus Rental & Heavy Equipment Rental',
+      logo: '/images/logos/etihad-rail-logo.png',
       content:
-        'The school shuttle service is excellent. Parents trust ALAA completely with their children. Safety is always the priority.',
+        "ALAA Transport has consistently supported our workforce transportation and equipment logistics requirements in Fujairah. Their team understands project site operations, follows safety standards, and responds quickly to urgent requests. Their professionalism, flexibility, and dependable service have made them feel more like an extension of our own team than an external vendor.",
       rating: 5,
-      image: '👩‍🏫',
     },
     {
-      name: 'Mohammed Al Hashmi',
-      company: 'Fujairah Tech Corp',
-      role: 'HR Manager',
+      company: 'NMDC (National Marine Dredging Company)',
+      shortCompany: 'NMDC',
+      role: 'Procurement Manager',
+      services: 'Bus Rental & Utilities Pickups Rental',
+      logo: '/images/logos/nmdc-logo.webp',
       content:
-        'Staff transportation has never been easier. Professional drivers, clean vehicles, and always on time. Highly recommended!',
+        "ALAA Transport has been a reliable and easy-to-work-with partner throughout our projects. Their team is highly responsive, communicates clearly, and understands client requirements well. Their professionalism and commitment to service excellence make them a valuable transportation partner with strong potential for future growth.",
       rating: 5,
-      image: '💼',
     },
     {
-      name: 'Sarah Johnson',
-      company: 'International Hotel Fujairah',
-      role: 'Guest Services',
+      company: 'Fujairah Fine Arts Academy',
+      shortCompany: 'Fine Arts Academy',
+      role: 'Administration Manager',
+      services: 'School Transportation',
+      logo: '/images/logos/fujairah-fine-arts-academy.png',
       content:
-        'Our guests love the airport transfer service. The comfort and punctuality make lasting impressions. Perfect for our business!',
+        "Safety and reliability are our highest priorities, and ALAA Transport has consistently delivered both. Their buses are punctual, drivers are responsible and friendly, and they ensure children travel comfortably and safely. Their team is also quick to accommodate last-minute changes, making the entire transportation process smooth, dependable, and stress-free.",
       rating: 5,
-      image: '🏨',
-    },
-    {
-      name: 'Hassan Al Naqbi',
-      company: 'Construction & Engineering',
-      role: 'Site Manager',
-      content:
-        'Employee shuttles have improved productivity and morale significantly. ALAA understands our industry needs perfectly.',
-      rating: 5,
-      image: '🏗️',
     },
   ];
 
@@ -94,9 +88,9 @@ export function Testimonials() {
   useEffect(() => {
     const timer = setInterval(() => {
       nextSlide();
-    }, 5000);
+    }, 8000);
     return () => clearInterval(timer);
-  }, []);
+  }, [testimonials.length]);
 
   return (
     <section className="py-12 md:py-16 bg-gradient-to-br from-white via-gray-50 to-white relative overflow-hidden">
@@ -140,22 +134,31 @@ export function Testimonials() {
                     )}
                     
                     <div className={`
-                      w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center text-xs font-black tracking-tighter transition-all duration-500 shrink-0 border-2
+                      w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center text-xs font-black tracking-tighter transition-all duration-500 shrink-0 border-2 overflow-hidden
                       ${idx === activeIndex 
-                        ? 'bg-primary text-white border-primary scale-105 z-10 shadow-lg shadow-primary/20' 
-                        : 'bg-white text-gray-400 border-gray-100 opacity-60 hover:opacity-100 hover:scale-105'
+                        ? 'border-primary scale-105 z-10 shadow-lg shadow-primary/20' 
+                        : 'border-gray-100 opacity-60 hover:opacity-100 hover:scale-105'
                       }
+                      ${testimonial.logo ? 'bg-white p-1' : (idx === activeIndex ? 'bg-primary text-white' : 'bg-white text-gray-400')}
                     `}>
-                      {getInitials(testimonial.name)}
+                      {testimonial.logo ? (
+                        <img
+                          src={testimonial.logo}
+                          alt={`${testimonial.shortCompany} Logo`}
+                          className="w-full h-full object-contain rounded-full"
+                        />
+                      ) : (
+                        getInitials(testimonial.shortCompany)
+                      )}
                     </div>
 
                     {/* Reviewer Info beside circle (Desktop only) */}
                     <div className={`hidden lg:block transition-all duration-500 ${idx === activeIndex ? 'translate-x-1' : 'opacity-60'}`}>
                       <p className={`font-extrabold text-xs uppercase tracking-wider font-heading leading-tight ${idx === activeIndex ? 'text-secondary' : 'text-gray-500'}`}>
-                        {testimonial.name}
+                        {testimonial.shortCompany}
                       </p>
                       <p className="text-[9px] font-bold text-primary uppercase tracking-widest mt-0.5">
-                        {testimonial.company}
+                        {testimonial.role}
                       </p>
                     </div>
                   </button>
@@ -164,36 +167,30 @@ export function Testimonials() {
 
               {/* Main Spotlight Card - ON RIGHT */}
               <div className="w-full lg:flex-1">
-                <div className="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-2xl shadow-primary/5 border border-gray-100 relative overflow-hidden group min-h-[400px] flex flex-col justify-center">
+                <div className="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-2xl shadow-primary/5 border border-gray-100 relative overflow-hidden group h-[520px] sm:h-[440px] md:h-[450px] lg:h-[480px] xl:h-[440px]">
                   {/* Decorative background circle */}
                   <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
                   
                   {/* Premium Quote treatment */}
-                  <div className="relative z-10">
-                    <div className="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-primary/20 rotate-3">
+                  <div className="relative z-10 h-full flex flex-col justify-between">
+                    <div className="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center shadow-lg shadow-primary/20 rotate-3 shrink-0">
                       <span className="text-white text-3xl font-serif leading-none mt-3">&ldquo;</span>
                     </div>
 
-                    <div className="min-h-[150px] md:min-h-[180px] lg:min-h-[220px] flex items-center mb-8 md:mb-10 py-2">
-                      <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-secondary font-medium leading-relaxed md:leading-tight font-sans italic w-full">
+                    <div className="flex-1 flex items-center py-4">
+                      <p className="text-sm sm:text-base md:text-lg text-secondary font-medium leading-relaxed font-sans italic w-full">
                         {testimonials[activeIndex].content}
                       </p>
                     </div>
 
-                    <div className="flex items-center gap-4 pt-8 border-t border-gray-100">
+                    <div className="flex items-center gap-4 pt-6 md:pt-8 border-t border-gray-100 shrink-0">
                       <div className="flex-1">
-                        <p className="font-extrabold text-secondary text-xl font-heading mb-0.5">
-                          {testimonials[activeIndex].name}
+                        <p className="font-extrabold text-secondary text-lg md:text-xl font-heading mb-0.5">
+                          {testimonials[activeIndex].company}
                         </p>
-                        <p className="text-sm text-gray-500 font-sans font-medium">
-                          {testimonials[activeIndex].role} at <span className="text-primary">{testimonials[activeIndex].company}</span>
+                        <p className="text-xs md:text-sm text-gray-500 font-sans font-medium">
+                          {testimonials[activeIndex].role} <span className="text-primary font-semibold">({testimonials[activeIndex].services})</span>
                         </p>
-                      </div>
-                      
-                      <div className="flex gap-0.5">
-                        {Array(testimonials[activeIndex].rating).fill(0).map((_, i) => (
-                          <Star key={i} className="w-4 h-4 fill-primary text-primary" />
-                        ))}
                       </div>
                     </div>
                   </div>

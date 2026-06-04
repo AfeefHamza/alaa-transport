@@ -10,9 +10,11 @@ export function Clients() {
     { name: 'Lulu Hypermarket', src: '/images/logos/lulu-hypermarket.jpg' },
     { name: 'Etihad Rail', src: '/images/logos/etihad-rail-logo.png' },
     { name: 'Toshiba', src: '/images/logos/toshiba.png' },
-    { name: 'Fujairah Government', src: '/images/logos/government-fujairah.png' },
+    { name: 'Fujairah Fine Arts Academy', src: '/images/logos/fujairah-fine-arts-academy.png' },
     { name: 'World Star Holding', src: '/images/logos/world-star.jpeg' },
-    { name: 'Fujairah Fine Arts Academy', src: '/images/logos/fujairah-fine-arts-academy.png' }
+    { name: 'Crown Prince Fujairah', src: '/images/logos/crown-prince.webp' },
+    { name: 'NMDC Logo', src: '/images/logos/nmdc-logo.webp' },
+    { name: 'China Railway Group', src: '/images/logos/china-railway.webp' }
   ];
 
 
@@ -53,7 +55,7 @@ export function Clients() {
                         alt={`${logo.name} Partner Logo`}
                         fill
                         className="object-contain filter mix-blend-multiply"
-                        sizes="(max-width: 768px) 150px, 200px"
+                        sizes="(max-width: 768px) 250px, 200px"
                       />
                     </div>
                   </div>

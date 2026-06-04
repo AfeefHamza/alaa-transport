@@ -15,7 +15,7 @@ export function Footer() {
           <FadeInItem className="space-y-4 flex flex-col items-center md:items-start col-span-1 md:col-span-1 border-b md:border-b-0 pb-6 md:pb-0">
             <div className="w-32 h-12 relative mb-2">
               <img 
-                src="/images/logos/ALAA Logo Reworked NO BG.png" 
+                src="/images/logos/alaa-logo.png" 
                 alt="ALAA Transport" 
                 className="w-full h-full object-contain object-left"
               />

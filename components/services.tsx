@@ -26,31 +26,31 @@ const services = [
     icon: Bus,
     title: 'Bus & Van Rental Services',
     description: 'Diverse rental fleet including 12, 18, 30, and 60-seater buses and vans. Fully air-conditioned and ideal for group travel, tourism, and corporate events.',
-    image: '/images/bus-van-rental-services.jpg'
+    image: '/images/rental-services.webp'
   },
   {
     icon: GraduationCap,
     title: 'School Transport Services',
     description: 'Secure and dependable school transportation services. We prioritize safety with trained drivers and well-maintained buses for the peace of mind of parents and schools.',
-    image: '/images/school-transportation.jpg'
+    image: '/images/school-transport.webp'
   },
   {
     icon: Truck,
     title: 'Utility & Material Transport',
     description: 'Efficient transport services for water supply, construction materials, and debris removal. Supporting Fujairah\'s industrial and maintenance needs with reliable operations.',
-    image: '/images/utility-material-transport.jpg'
+    image: '/images/utility-material.webp'
   },
   {
     icon: HardHat,
     title: 'Heavy Equipment Rental',
     description: 'Comprehensive heavy machinery rental including excavators, cranes, dumper trucks, and more. Robust equipment for large-scale construction and industrial projects.',
-    image: '/images/heavy-equipment-rental.jpg'
+    image: '/images/equipment-rental.webp'
   },
   {
     icon: Wrench,
     title: '24/7 Heavy Duty Garage',
     description: 'Our 24/7 heavy duty garage services provide reliable maintenance and repair support for buses, vans, and heavy equipment, ensuring smooth and uninterrupted operations.',
-    image: '/images/garage.jpg'
+    image: '/images/duty-garage.webp'
   },
 ];
 

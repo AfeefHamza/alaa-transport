@@ -1,5 +1,5 @@
 import { FadeIn } from './ui/fade-in';
-import { Mail } from 'lucide-react';
+import { Linkedin, Mail } from 'lucide-react';
 
 export function Careers() {
   return (
@@ -26,21 +26,39 @@ export function Careers() {
           {/* Body Content */}
           <div className="space-y-6 text-base md:text-[1.1rem] text-gray-600 font-sans leading-relaxed max-w-3xl mx-auto mb-10 font-medium">
             <p>
-              Alaa Transport offers an environment where every employee can thrive and reach their professional potential. Nothing is more important to us than ensuring every employee feels valued and respected in their roles, and able to progress in their career through training, mentorship, and educational opportunities.
+              Life at ALAA Transport is built on teamwork, respect, and a strong commitment to delivering safe and reliable transport services across the UAE. We value dedicated and passionate individuals who are ready to grow with us in a professional and supportive environment where every role matters and contributes to our success.
             </p>
             <p>
-              With a wide range of attractive employee benefits and competitive salaries, we have created a workplace defined by its culture and made by its people. If you have a passion for transportation, logistics, and heavy equipment, and want to work on some of the region's most exciting projects, find your next challenge with us.
+              If you are interested in joining our team, we welcome you to get in touch with us via email at{' '}
+              <a
+                href="mailto:Hr@alaatransport.com"
+                className="text-[#B51E2B] font-semibold hover:text-[#0a192f] transition-colors"
+              >
+                Hr@alaatransport.com
+              </a>
+              {' '}or through the contact link below. We also encourage you to follow and check our LinkedIn page regularly for the latest job openings and career updates at ALAA Transport.
             </p>
           </div>
 
           {/* Contact Button */}
-          <a 
-            href="#contact"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-white text-[#0a192f] font-bold rounded-md shadow-lg shadow-black/5 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 font-sans border border-gray-100 group"
-          >
-            <Mail className="w-5 h-5 text-[#B51E2B]" />
-            Contact Us
-          </a>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a 
+              href="mailto:Hr@alaatransport.com"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-white text-[#0a192f] font-bold rounded-md shadow-lg shadow-black/5 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 font-sans border border-gray-100 group"
+            >
+              <Mail className="w-5 h-5 text-[#B51E2B]" />
+              Contact Us
+            </a>
+            <a
+              href="https://www.linkedin.com/company/alaagroup/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-[#0a192f] text-white font-bold rounded-md shadow-lg shadow-black/5 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 font-sans group"
+            >
+              <Linkedin className="w-5 h-5 text-white" />
+              LinkedIn
+            </a>
+          </div>
         </FadeIn>
       </div>
     </section>

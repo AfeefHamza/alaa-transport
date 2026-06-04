@@ -81,9 +81,9 @@ export default function Home() {
         name: "Passenger & Industrial Transport Services",
         provider: {
           "@type": "LocalBusiness",
-          "@id": "https://alaatransport.com/#organization",
+          "@id": "https://alaatransport.com",
         },
-        areaServed: "United Arab Emirates",
+        areaServed: "Fujairah, Abu Dhabi, Sharjah",
 
         hasOfferCatalog: {
           "@type": "OfferCatalog",

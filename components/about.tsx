@@ -10,7 +10,7 @@ export function About() {
           {/* Left Image */}
           <FadeIn direction="right" delay={0.2} className="relative h-[550px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] group">
             <Image
-              src="/images/about-fleet.jpg"
+              src="/images/about-section.webp"
               alt="ALAA Transport modern passenger fleet"
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -33,10 +33,10 @@ export function About() {
               
               <div className="space-y-5 text-lg text-gray-600 font-sans leading-relaxed">
                 <p>
-                  ALAA Transport is your trusted partner for reliable transportation across Fujairah and the UAE. We specialize in providing safe, comfortable, and punctual transit solutions for corporate staff, schools, and large-scale industrial projects.
+                  ALAA Transport is a leading passenger transport and bus rental company in Fujairah with over 15 years of experience in the UAE transport industry, specializing in safe, reliable, and affordable transportation solutions.
                 </p>
                 <p>
-                  Our commitment goes beyond just moving people. We maintain a modern, rigorously inspected fleet and employ highly trained professional drivers to ensure that every journey with us is smooth, secure, and completely stress-free.
+                  We are recognized for providing high-quality staff transport, labor transport, school transport, and long-term bus rental contracts for companies and educational institutions across the UAE. With a strong and well-maintained fleet, we ensure punctuality, comfort, and safety in every journey, making us one of the most trusted bus rental and passenger transport service providers in the region.
                 </p>
               </div>
             </FadeInItem>
