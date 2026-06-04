@@ -26,7 +26,7 @@ export function Header() {
       <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-in-out py-3">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Dynamic Floating Pill Nav */}
-          <div className="flex justify-between items-center transition-all duration-700 rounded-full px-6 border h-16 bg-white/90 backdrop-blur-xl border-white/40 shadow-xl shadow-primary/5">
+          <div className="flex justify-between items-center transition-all duration-700 rounded-full px-6 border h-16 mt-2 bg-white/30 backdrop-blur-xl border-white/30 shadow-xl shadow-primary/5">
             
             {/* Logo */}
             <div className="flex items-center transition-all duration-700 origin-left pl-2 scale-100">
@@ -53,10 +53,10 @@ export function Header() {
                 href="https://wa.me/971522194186"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group p-3 bg-gray-50 rounded-full hover:bg-[#25D366]/10 transition-colors"
+                className="group p-3 bg-[#25D366] rounded-full hover:bg-[#25D366]/10 transition-colors"
                 aria-label="Contact us on WhatsApp"
               >
-                <WhatsAppIcon className="w-5 h-5 text-[#25D366] group-hover:scale-110 transition-transform" />
+                <WhatsAppIcon className="w-5 h-5  group-hover:scale-110 transition-transform" />
               </a>
               <a
                 href="tel:+971522194186"

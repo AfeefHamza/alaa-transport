@@ -4,14 +4,14 @@ import { FadeIn, FadeInStagger, FadeInItem } from './ui/fade-in';
 export function Clients() {
   // Your provided logo files in public/images/logos
   const partnerLogos = [
-    { name: 'Adnoc Group', src: '/images/logos/Adnoc-Group-LOGO_0.jpg' },
-    { name: 'IKEA', src: '/images/logos/Ikea_logo.svg.png' },
-    { name: 'Nesto', src: '/images/logos/Nesto_Logo_2019.png' },
-    { name: 'Lulu Hypermarket', src: '/images/logos/lulu-hypermarket.jpg' },
-    { name: 'Etihad Rail', src: '/images/logos/etihad-rail-logo.png' },
-    { name: 'Toshiba', src: '/images/logos/toshiba.png' },
-    { name: 'Fujairah Fine Arts Academy', src: '/images/logos/fujairah-fine-arts-academy.png' },
-    { name: 'World Star Holding', src: '/images/logos/world-star.jpeg' },
+    { name: 'Adnoc Group', src: '/images/logos/Adnoc-Group-LOGO.webp' },
+    { name: 'IKEA', src: '/images/logos/Ikea_logo.webp' },
+    { name: 'Nesto', src: '/images/logos/Nesto_Logo_2019.webp' },
+    { name: 'Lulu Hypermarket', src: '/images/logos/lulu-hypermarket.webp' },
+    { name: 'Etihad Rail', src: '/images/logos/etihad-rail-logo.webp' },
+    { name: 'Toshiba', src: '/images/logos/toshiba.webp' },
+    { name: 'Fujairah Fine Arts Academy', src: '/images/logos/fujairah-fine-arts-academy.webp' },
+    { name: 'World Star Holding', src: '/images/logos/world-star.webp' },
     { name: 'Crown Prince Fujairah', src: '/images/logos/crown-prince.webp' },
     { name: 'NMDC Logo', src: '/images/logos/nmdc-logo.webp' },
     { name: 'China Railway Group', src: '/images/logos/china-railway.webp' }

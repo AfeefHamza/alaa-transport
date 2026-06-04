@@ -63,10 +63,10 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/images/logos/alaa-logo.png',
+        url: '/images/logos/alaa-logo.webp',
       },
     ],
-    apple: '/images/logos/alaa-logo.png',
+    apple: '/images/logos/alaa-logo.webp',
   },
 }
 

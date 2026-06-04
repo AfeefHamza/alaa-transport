@@ -20,7 +20,7 @@ const services = [
     icon: Users,
     title: 'Passenger Transport Services',
     description: 'Our passenger transport services in Fujairah cover everything from daily bus transportation and corporate travel to airport transfers, luxury city tours, and labour transport. We focus on delivering safe, punctual, and comfortable journeys for every client.',
-    image: '/images/passenger-transport-services.jpg'
+    image: '/images/passenger-transport-services.webp'
   },
   {
     icon: Bus,

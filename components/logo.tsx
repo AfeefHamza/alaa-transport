@@ -6,7 +6,7 @@ export function Logo() {
     <Link href="/" className="flex items-center gap-3 group">
       <div className="relative w-12 h-12 md:w-14 md:h-14 shrink-0">
         <Image
-          src="/images/logos/alaa-logo.png"
+          src="/images/logos/alaa-logo.webp"
           alt="ALAA Transport"
           width={56}
           height={56}
