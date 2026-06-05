@@ -76,7 +76,6 @@ export function Hero() {
                   object-center
                   sm:object-[30%_center]
                   contrast-105
-                  brightness-95
                 "
               />
             </div>
@@ -84,7 +83,7 @@ export function Hero() {
 
           {/* Overlays */}
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/15" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/45 " />
             <div className="absolute inset-0 bg-black/20" />
           </div>
         </div>
@@ -139,7 +138,7 @@ export function Hero() {
                         'Inter, Manrope, system-ui, Arial, sans-serif',
                     }}
                   >
-                    15 Years of Trusted Transport Excellence. Reliable, safe,
+                    15 Years of Trusted Transport Excellence. <br /> Reliable, safe,
                     and professional passenger transport across Fujairah,
                     Sharjah and Abu Dhabi.
                   </p>
@@ -183,7 +182,7 @@ export function Hero() {
                         </div>
                       </div>
 
-                      <div className="hidden sm:block h-8 w-px bg-white/10" />
+                      <div className="hidden sm:block h-8 w-px bg-white/20" />
 
                       <div className="text-center">
                         <div className="text-lg sm:text-xl font-bold">
@@ -194,7 +193,7 @@ export function Hero() {
                         </div>
                       </div>
 
-                      <div className="hidden sm:block h-8 w-px bg-white/10" />
+                      <div className="hidden sm:block h-8 w-px bg-white/20" />
 
                       <div className="text-center">
                         <div className="text-lg sm:text-xl font-bold">

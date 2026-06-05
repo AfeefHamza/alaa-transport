@@ -7,6 +7,7 @@ import { Mission } from '@/components/mission';
 import { Testimonials } from '@/components/testimonials';
 import { Clients } from '@/components/clients';
 import { Contact } from '@/components/contact';
+import { Faqs } from '@/components/faqs';
 import { Careers } from '@/components/careers';
 import { Footer } from '@/components/footer';
 
@@ -21,6 +22,7 @@ export default function Home() {
       <About />
       <Mission />
       <Careers />
+      <Faqs />
       <Contact />
       <Footer />
 

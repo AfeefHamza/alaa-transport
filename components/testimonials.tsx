@@ -44,7 +44,7 @@ export function Testimonials() {
       shortCompany: 'Lulu Mall',
       role: 'Facility Manager',
       services: 'Bus Rental & Garage Services',
-      logo: '/images/logos/lulu-hypermarket.jpg',
+      logo: '/images/logos/lulu-hypermarket.webp',
       content:
         "Alaa Transport has been our trusted partner in Fujairah for staff transportation and garage services. Their fleet is well-maintained, drivers are professional and courteous, and the team handles last-minute scheduling changes efficiently. Their reliability, responsiveness, and commitment to service quality make them a dependable transport partner for any retail or commercial organization in the UAE.",
       rating: 5,
@@ -54,7 +54,7 @@ export function Testimonials() {
       shortCompany: 'Etihad Railway',
       role: 'Project Manager',
       services: 'Bus Rental & Heavy Equipment Rental',
-      logo: '/images/logos/etihad-rail-logo.png',
+      logo: '/images/logos/etihad-rail-logo.webp',
       content:
         "ALAA Transport has consistently supported our workforce transportation and equipment logistics requirements in Fujairah. Their team understands project site operations, follows safety standards, and responds quickly to urgent requests. Their professionalism, flexibility, and dependable service have made them feel more like an extension of our own team than an external vendor.",
       rating: 5,
@@ -74,7 +74,7 @@ export function Testimonials() {
       shortCompany: 'Fine Arts Academy',
       role: 'Administration Manager',
       services: 'School Transportation',
-      logo: '/images/logos/fujairah-fine-arts-academy.png',
+      logo: '/images/logos/fujairah-fine-arts-academy.webp',
       content:
         "Safety and reliability are our highest priorities, and ALAA Transport has consistently delivered both. Their buses are punctual, drivers are responsible and friendly, and they ensure children travel comfortably and safely. Their team is also quick to accommodate last-minute changes, making the entire transportation process smooth, dependable, and stress-free.",
       rating: 5,
@@ -199,28 +199,6 @@ export function Testimonials() {
             </div>
           </FadeIn>
         </div>
-
-        {/* Stats under testimonials */}
-        <FadeInStagger delay={0.4} className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-          {[
-            { value: 5.0, decimals: 1, label: 'Average Rating', suffix: '★' },
-            { value: 500, label: 'Active Clients', suffix: '+' },
-            { value: 98, label: 'Satisfaction Rate', suffix: '%' },
-            { value: 10, label: 'Years Experience', suffix: '+' },
-          ].map((stat, idx) => (
-            <FadeInItem key={idx}>
-              <div
-                className="text-center p-8 bg-white rounded-2xl border border-gray-100 hover:shadow-2xl hover:shadow-primary/5 hover:-translate-y-1 transition-all duration-300"
-              >
-                <p className="text-4xl md:text-5xl font-extrabold text-primary mb-3 font-heading">
-                  <Counter value={stat.value} decimals={stat.decimals} />
-                  {stat.suffix}
-                </p>
-                <p className="text-secondary font-bold font-sans uppercase tracking-wider text-sm">{stat.label}</p>
-              </div>
-            </FadeInItem>
-          ))}
-        </FadeInStagger>
       </div>
     </section>
   );

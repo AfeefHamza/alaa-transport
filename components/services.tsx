@@ -19,13 +19,13 @@ const services = [
   {
     icon: Users,
     title: 'Passenger Transport Services',
-    description: 'Our passenger transport services in Fujairah cover everything from daily bus transportation and corporate travel to airport transfers, luxury city tours, and labour transport. We focus on delivering safe, punctual, and comfortable journeys for every client.',
+    description: 'Our passenger transport services in Fujairah cover everything from daily bus transportation and corporate travel to airport transfers, luxury city tours, and labour transport.',
     image: '/images/passenger-transport-services.webp'
   },
   {
     icon: Bus,
     title: 'Bus & Van Rental Services',
-    description: 'Diverse rental fleet including 12, 18, 30, and 60-seater buses and vans. Fully air-conditioned and ideal for group travel, tourism, and corporate events.',
+    description: 'Diverse rental fleet including 12, 18, 30, and 60-seater buses and vans. Fully air-conditioned and ideal for group travel, tourism, corporate events, conferences, and staff transportation.',
     image: '/images/rental-services.webp'
   },
   {
