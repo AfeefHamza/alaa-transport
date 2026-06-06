@@ -84,7 +84,7 @@ export default function Home() {
         name: "Passenger & Industrial Transport Services",
         provider: {
           "@type": "LocalBusiness",
-          "@id": "https://alaatransport.com",
+          "@id": "https://alaatransport.com/#organization",
         },
         areaServed: "Fujairah, Abu Dhabi, Sharjah",
 
@@ -137,9 +137,71 @@ export default function Home() {
                   "Excavators, mobile cranes, dumper trucks, trailers, and wheel loaders for industrial projects.",
               },
             },
+            {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "24/7 Heavy Duty Garage Services",
+              "description": "Round-the-clock maintenance, repair, diagnostics, and support services for buses, vans, commercial vehicles, and heavy equipment."
+            }
+          },
           ],
         },
       },
+      {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What types of passenger transport vehicles are available in your fleet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Alaa Transport Fujairah operates a diverse fleet including 8-seater vans, 15-seater vans, 30-seater coaster buses, 50-seater premium buses, and 60-seater buses for passenger transportation across the UAE."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly can you mobilize vehicles for a new project?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depending on fleet requirements and project location, vehicles can often be mobilized within a short period with full documentation, permits, and driver allocation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer transportation services across all Emirates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We provide transportation services across Fujairah, Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Umm Al Quwain, and Khor Fakkan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why should I choose Alaa Transport over other transport companies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Clients choose Alaa Transport for its reliable fleet, experienced drivers, strong safety standards, competitive pricing, responsive operations team, and comprehensive transport solutions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide buses with CISPA passes and Fujairah Port entry permits?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We provide transportation solutions for industrial, marine, and oil and gas projects requiring CISPA-approved access and Fujairah Port entry documentation."
+      }
+    },
+    {
+  "@type": "Question",
+  "name": "Do you provide bus rental services in Fujairah?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. We provide bus rental services in Fujairah including 12-seater vans, 18-seater vans, 30-seater buses, and 60-seater buses for corporate transport, staff transportation, airport transfers, school transport, and city tours."
+  }
+  }
+  ]
+}
     ]),
   }}
 />
