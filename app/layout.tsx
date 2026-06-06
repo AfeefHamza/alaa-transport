@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     siteName: 'ALAA Transport',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/og-image.webp',
         width: 1200,
         height: 630,
         alt: 'ALAA Transport Premium Fleet and Equipment',
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'ALAA Transport | Premiere Transport & Equipment Services in UAE',
     description: 'Leading provider of passenger transport and industrial equipment rental services in the UAE.',
-    images: ['/og-image.jpg'],
+    images: ['/og-image.webp'],
   },
   alternates: {
     canonical: 'https://alaatransport.com',

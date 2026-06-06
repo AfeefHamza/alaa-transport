@@ -26,7 +26,7 @@ export function Mission() {
               <h2 className="text-heading-xl text-secondary animated-underline">Our Vision</h2>
             </div>
             <p className="text-body-lg text-foreground/70 leading-relaxed font-sans mb-8">
-              To be the first choice for safe and reliable passenger transport, setting industry standards through exceptional service, professional drivers, and modern fleet management.
+              To be the first choice for safe, reliable, and trusted passenger transport, setting industry standards through exceptional service, professional drivers, modern fleet management, and a commitment to customer satisfaction.
             </p>
             <div className="mt-auto flex-1 border-l-4 border-primary bg-primary/5 rounded-r-xl p-6 md:p-8 flex items-center">
               <p className="text-secondary font-bold italic font-sans text-lg">

@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { Star } from 'lucide-react';
-import { motion, animate, useInView } from 'framer-motion';
+import { motion, animate, useInView, AnimatePresence } from 'framer-motion';
 import { FadeIn, FadeInStagger, FadeInItem } from './ui/fade-in';
 
 const getInitials = (name: string) => {
@@ -56,7 +56,7 @@ export function Testimonials() {
       services: 'Bus Rental & Heavy Equipment Rental',
       logo: '/images/logos/etihad-rail-logo.webp',
       content:
-        "ALAA Transport has consistently supported our workforce transportation and equipment logistics requirements in Fujairah. Their team understands project site operations, follows safety standards, and responds quickly to urgent requests. Their professionalism, flexibility, and dependable service have made them feel more like an extension of our own team than an external vendor.",
+        "Alaa Transport has consistently supported our workforce transportation and equipment logistics requirements in Fujairah. Their team understands project site operations, follows safety standards, and responds quickly to urgent requests. Their professionalism, flexibility, and dependable service have made them feel more like an extension of our own team than an external vendor.",
       rating: 5,
     },
     {
@@ -66,7 +66,7 @@ export function Testimonials() {
       services: 'Bus Rental & Utilities Pickups Rental',
       logo: '/images/logos/nmdc-logo.webp',
       content:
-        "ALAA Transport has been a reliable and easy-to-work-with partner throughout our projects. Their team is highly responsive, communicates clearly, and understands client requirements well. Their professionalism and commitment to service excellence make them a valuable transportation partner with strong potential for future growth.",
+        "Alaa Transport has been a reliable and easy-to-work-with partner throughout our projects. Their team is highly responsive, communicates clearly, and understands client requirements well. Their professionalism and commitment to service excellence make them a valuable transportation partner with strong potential for future growth.",
       rating: 5,
     },
     {
@@ -76,7 +76,7 @@ export function Testimonials() {
       services: 'School Transportation',
       logo: '/images/logos/fujairah-fine-arts-academy.webp',
       content:
-        "Safety and reliability are our highest priorities, and ALAA Transport has consistently delivered both. Their buses are punctual, drivers are responsible and friendly, and they ensure children travel comfortably and safely. Their team is also quick to accommodate last-minute changes, making the entire transportation process smooth, dependable, and stress-free.",
+        "Safety and reliability are our highest priorities, and Alaa Transport has consistently delivered both. Their buses are punctual, drivers are responsible and friendly, and they ensure children travel comfortably and safely. Their team is also quick to accommodate last-minute changes, making the entire transportation process smooth, dependable, and stress-free.",
       rating: 5,
     },
   ];
@@ -177,22 +177,40 @@ export function Testimonials() {
                       <span className="text-white text-3xl font-serif leading-none mt-3">&ldquo;</span>
                     </div>
 
-                    <div className="flex-1 flex items-center py-4">
-                      <p className="text-sm sm:text-base md:text-lg text-secondary font-medium leading-relaxed font-sans italic w-full">
-                        {testimonials[activeIndex].content}
-                      </p>
-                    </div>
+                    <AnimatePresence mode="wait">
+                      <motion.div
+                        key={activeIndex}
+                        initial={{ opacity: 0, y: 8, scale: 0.995 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: -8, scale: 0.995 }}
+                        transition={{ duration: 0.5, ease: 'easeInOut' }}
+                        className="flex-1 flex items-center py-4"
+                      >
+                        <p className="text-sm sm:text-base md:text-lg text-secondary font-medium leading-relaxed font-sans italic w-full">
+                          {testimonials[activeIndex].content}
+                        </p>
+                      </motion.div>
+                    </AnimatePresence>
 
-                    <div className="flex items-center gap-4 pt-6 md:pt-8 border-t border-gray-100 shrink-0">
-                      <div className="flex-1">
-                        <p className="font-extrabold text-secondary text-lg md:text-xl font-heading mb-0.5">
-                          {testimonials[activeIndex].company}
-                        </p>
-                        <p className="text-xs md:text-sm text-gray-500 font-sans font-medium">
-                          {testimonials[activeIndex].role} <span className="text-primary font-semibold">({testimonials[activeIndex].services})</span>
-                        </p>
-                      </div>
-                    </div>
+                    <AnimatePresence mode="wait">
+                      <motion.div
+                        key={`meta-${activeIndex}`}
+                        initial={{ opacity: 0, y: 6 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -6 }}
+                        transition={{ duration: 0.45, delay: 0.05, ease: 'easeInOut' }}
+                        className="flex items-center gap-4 pt-6 md:pt-8 border-t border-gray-100 shrink-0"
+                      >
+                        <div className="flex-1">
+                          <p className="font-extrabold text-secondary text-lg md:text-xl font-heading mb-0.5">
+                            {testimonials[activeIndex].company}
+                          </p>
+                          <p className="text-xs md:text-sm text-gray-500 font-sans font-medium">
+                            {testimonials[activeIndex].role} <span className="text-primary font-semibold">({testimonials[activeIndex].services})</span>
+                          </p>
+                        </div>
+                      </motion.div>
+                    </AnimatePresence>
                   </div>
                 </div>
               </div>

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { 
   Users, 
@@ -54,8 +54,15 @@ const services = [
   },
 ];
 
-export function Services() {
+export function Services({ interval = 8000 }: { interval?: number } = {}) {
   const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % services.length);
+    }, interval);
+    return () => clearInterval(timer);
+  }, [interval, services.length]);
 
   return (
     <section id="services" className="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-24 bg-[#050510]">
@@ -76,14 +83,14 @@ export function Services() {
             sizes="100vw"
           />
           {/* Light overlay just to gently dim the image without hiding it */}
-          <div className="absolute inset-0 bg-black/30 transition-colors duration-1000"></div>
+          <div className="absolute inset-0 bg-black/20 transition-colors duration-1000"></div>
         </div>
       ))}
 
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-auto">
         
         {/* Main Glass Content Card */}
-        <FadeIn className="bg-[#050510]/20 backdrop-blur-md border border-white/10 rounded-[2rem] p-8 md:p-12 lg:p-14 shadow-2xl">
+        <FadeIn className="bg-[#050510]/30 backdrop-blur-md border border-white/40 rounded-[2rem] p-8 md:p-12 lg:p-14 shadow-2xl">
           <p className="text-white/80 font-bold uppercase tracking-widest text-sm mb-6 font-sans">
             Our Services
           </p>

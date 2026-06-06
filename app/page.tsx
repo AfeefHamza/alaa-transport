@@ -41,7 +41,8 @@ export default function Home() {
         url: "https://alaatransport.com",
         telephone: "+971522194186",
         email: "Admin@alaatransport.com",
-        image: "https://alaatransport.com/og-image.jpg",
+        image: "https://alaatransport.com/og-image.webp",
+        logo: "https://alaatransport.com/images/logos/alaa-logo.webp",
         priceRange: "$$",
 
         address: {
