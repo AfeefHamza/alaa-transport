@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter, Montserrat, Arizonia } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { ScrollReset } from '@/components/ui/scroll-reset'
+import { ConnectUs } from '@/components/connect-us'
 import './globals.css'
 
 const inter = Inter({
@@ -118,6 +119,7 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         <ScrollReset />
         {children}
+        <ConnectUs />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

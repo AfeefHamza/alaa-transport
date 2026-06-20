@@ -50,15 +50,6 @@ export function Header() {
             {/* Desktop CTA Buttons */}
             <div className="hidden md:flex items-center gap-4">
               <a
-                href="https://wa.me/971522194186"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group p-3 bg-[#25D366] rounded-full hover:bg-[#25D366]/10 transition-colors"
-                aria-label="Contact us on WhatsApp"
-              >
-                <WhatsAppIcon className="w-5 h-5  group-hover:scale-110 transition-transform" />
-              </a>
-              <a
                 href="tel:+971522194186"
                 className="px-6 py-3 bg-secondary text-white rounded-full font-bold font-sans text-sm hover:bg-black transition-all hover:shadow-lg flex items-center gap-2 group"
                 aria-label="Call ALAA Transport"
@@ -70,22 +61,6 @@ export function Header() {
 
             {/* Mobile Actions & Menu Button */}
             <div className="flex md:hidden items-center gap-2">
-              <a
-                href="https://wa.me/971522194186"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 bg-[#25D366]/10 rounded-full hover:bg-[#25D366]/20 transition-colors"
-                aria-label="Contact us on WhatsApp"
-              >
-                <WhatsAppIcon className="w-5 h-5 text-[#25D366]" />
-              </a>
-              <a
-                href="tel:+971522194186"
-                className="p-2 bg-[#B51E2B] text-white rounded-full hover:bg-black transition-colors"
-                aria-label="Call ALAA Transport"
-              >
-                <Phone className="w-4 h-4" />
-              </a>
               <button
                 onClick={toggleMobileMenu}
                 className="p-2 hover:bg-gray-100 rounded-full transition-colors ml-1"

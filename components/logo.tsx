@@ -4,7 +4,7 @@ import Link from 'next/link';
 export function Logo() {
   return (
     <Link href="/" className="flex items-center gap-3 group">
-      <div className="relative w-12 h-12 md:w-14 md:h-14 shrink-0">
+      <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 shrink-0">
         <Image
           src="/images/logos/alaa-logo.webp"
           alt="ALAA Transport"
@@ -14,11 +14,11 @@ export function Logo() {
           priority
         />
       </div>
-      <div className="hidden sm:flex flex-col justify-center select-none">
-        <span className="text-2xl md:text-3xl font-extrabold tracking-wide text-secondary uppercase font-heading leading-none">
+      <div className="flex flex-col justify-center select-none">
+        <span className="text-xl sm:text-2xl md:text-3xl font-extrabold tracking-wide text-secondary uppercase font-heading leading-none">
           A<span className="text-[#B51E2B]">L</span>AA
         </span>
-        <span className="text-[9px] md:text-[10px] font-bold tracking-[0.25em] text-foreground/60 uppercase font-sans mt-0.5 pl-0.5">
+        <span className="text-[8px] sm:text-[9px] md:text-[10px] font-bold tracking-[0.2em] sm:tracking-[0.25em] text-foreground/60 uppercase font-sans mt-0.5 pl-0.5">
           Transport
         </span>
       </div>
