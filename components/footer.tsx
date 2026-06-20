@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { Phone, Mail, MapPin, Facebook, Linkedin, Instagram } from 'lucide-react';
 import { FadeIn, FadeInStagger, FadeInItem } from './ui/fade-in';
 
@@ -14,10 +15,12 @@ export function Footer() {
           {/* Brand Info - Integrated Logo */}
           <FadeInItem className="space-y-4 flex flex-col items-center md:items-start col-span-1 md:col-span-1 border-b md:border-b-0 pb-6 md:pb-0">
             <div className="w-32 h-12 relative mb-2">
-              <img 
+              <Image 
                 src="/images/logos/alaa-logo.webp" 
                 alt="ALAA Transport" 
-                className="w-full h-full object-contain object-left"
+                fill
+                sizes="128px"
+                className="object-contain object-left"
               />
             </div>
             <p className="text-gray-500 font-sans text-[13px] leading-relaxed max-w-xs">

@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
 import { Star } from 'lucide-react';
 import { motion, animate, useInView, AnimatePresence } from 'framer-motion';
@@ -142,9 +143,11 @@ export function Testimonials() {
                       ${testimonial.logo ? 'bg-white p-1' : (idx === activeIndex ? 'bg-primary text-white' : 'bg-white text-gray-400')}
                     `}>
                       {testimonial.logo ? (
-                        <img
+                        <Image
                           src={testimonial.logo}
                           alt={`${testimonial.shortCompany} Logo`}
+                          width={48}
+                          height={48}
                           className="w-full h-full object-contain rounded-full"
                         />
                       ) : (

@@ -1,15 +1,28 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono, Arizonia } from 'next/font/google'
+import { Inter, Montserrat, Arizonia } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { ScrollReset } from '@/components/ui/scroll-reset'
 import './globals.css'
 
-const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800'],
+  variable: '--font-sans',
+  display: 'swap',
+});
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
+  variable: '--font-heading',
+  display: 'swap',
+});
+
 const arizonia = Arizonia({
   subsets: ['latin'],
   weight: ['400'],
   variable: '--font-arizonia',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -101,7 +114,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={arizonia.variable} suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${montserrat.variable} ${arizonia.variable}`} suppressHydrationWarning>
       <body className="font-sans antialiased">
         <ScrollReset />
         {children}

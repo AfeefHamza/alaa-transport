@@ -40,7 +40,7 @@ export function Clients() {
         <div className="absolute right-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-l from-gray-50/90 to-transparent z-20 pointer-events-none"></div>
 
         <div className="animate-marquee flex w-max pointer-events-none">
-          {[...Array(4)].map((_, setIdx) => (
+          {[...Array(2)].map((_, setIdx) => (
             <div key={setIdx} className="flex gap-8 md:gap-16 pr-8 md:pr-16 items-center">
               {partnerLogos.map((logo, i) => (
                 <div

@@ -79,7 +79,6 @@ export function Services({ interval = 8000 }: { interval?: number } = {}) {
             alt={service.title}
             fill
             className="object-cover"
-            priority
             sizes="100vw"
           />
           {/* Light overlay just to gently dim the image without hiding it */}
