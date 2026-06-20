@@ -14,7 +14,7 @@ export function Contact() {
     message: '',
   });
 
-  const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_FORMSPREE_ID || "xjkgnbqe");
+  const [state, handleSubmit] = useForm( process.env.NEXT_PUBLIC_FORMSPREE_ID!);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;

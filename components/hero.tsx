@@ -71,12 +71,7 @@ export function Hero() {
                 fill
                 priority={idx === 0}
                 sizes="100vw"
-                className="
-                  object-cover
-                  object-center
-                  sm:object-[30%_center]
-                  contrast-105
-                "
+                className={`object-cover ${idx === 0 ? 'object-[80%_center]' : 'object-center'} sm:object-[30%_center] contrast-105`}
               />
             </div>
           ))}
@@ -118,7 +113,7 @@ export function Hero() {
                     <span className="hidden sm:inline">
                       <br />
                     </span>{' '}
-                    Our Responsibility.
+                    <span className="whitespace-nowrap">Our Responsibility.</span>
                   </h1>
 
                   {/* Description */}
